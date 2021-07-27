@@ -45,7 +45,7 @@ def create_intro_no():
     choice_txt = '"Please change your mind, the forest is counting on you!"'
     options = ['yes', 'no']
     opt_txt = 'Do you help?'
-    exits = ['ITEM_ONE', 'game_over']
+    exits = ['ITEM1', 'game_over']
     exit_txt = []
     exit_txt.append('"Thank you, I know you will save our forest."')
     exit_txt.append('The elven woman runs off in a huff.')
@@ -376,7 +376,62 @@ def create_sprite():
     exit_txt.append('You collect up all the beads and hand them over.')
     exit_txt.append('"Fine suit yourself!"\n'
                     'You walk through the door.')
-    exit_txt.append('You take the third tunnel.')
 
     sprite = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
     return sprite
+
+
+# Item pick up Branches
+def create_item1():
+    """
+    Create the item1 Branches object
+    """
+    int_txt = ('"Be careful on your quest the castle is full of traps.\n'
+               'I hear that the sourcerer can even manipulate fire."')
+    choice_txt = ('"Here take an item to help you on your quest"')
+    options = ['candle', 'waterskin', 'food']
+    opt_txt = 'Which item do you take?'
+    exits = ['puzzle1']
+    exit_txt = []
+    exit_txt.append('You take the item and place it in your bag.\n'
+                    'You make your way towards the castle.')
+
+    item1 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
+    return item1
+
+
+def create_item2():
+    """
+    Create the item2 Branches object
+    """
+    int_txt = ('"Thank you, I can now escape the castle.\n'
+               'Your journey from here is treacherous.\n'
+               'There will be many walls to knock down."')
+    choice_txt = ('"Here take an item to help you."')
+    options = ['sledgehammer', 'rope', 'feather']
+    opt_txt = 'Which item do you take?'
+    exits = ['puzzle4']
+    exit_txt = []
+    exit_txt.append('You take the item and place it in your bag.\n'
+                    'You walk through the door.')
+
+    item2 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
+    return item2
+
+
+def create_item3():
+    """
+    Create the item3 Branches object
+    """
+    int_txt = ('The force field disappears and you step through.\n'
+               'You see some items on the floor.')
+    choice_txt = ('You decide to take one with you.')
+    options = ['knife', 'axe', 'fan']
+    opt_txt = 'Which item do you take?'
+    exits = ['end_room']
+    exit_txt = []
+    exit_txt.append('You take the item and place it in your bag.\n'
+                    'You ascend the stairs.')
+
+    item3 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
+    return item3
