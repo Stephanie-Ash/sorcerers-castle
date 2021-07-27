@@ -1,5 +1,5 @@
 # Classes containing text and player options
-# for most of the story
+# for most of the story.
 
 class Branches:
     """
@@ -96,7 +96,7 @@ def create_dungeon():
     return dungeon
 
 
-# A route followed if Puzzle2 is passed.
+# A route, followed if Puzzle2 is passed.
 def create_A1():
     """
     Create the A1 Branches object.
@@ -131,8 +131,8 @@ def create_A2():
                'Just as you are about to walk across the clearing you '
                'spy a jaguar loitering on the edge')
     choice_txt = ('Do you:\n'
-                  'a. Create a distraction?\n'
-                  'b. Try to sneak past the jaguar?')
+                  'a. Create a distraction\n'
+                  'b. Try to sneak past the jaguar')
     options = ['a', 'b']
     opt_txt = 'Make your choice'
     exits = ['SPRITE', 'game_over']
@@ -158,8 +158,8 @@ def create_A3():
                'You see a steep drop, almost waterfall ahead.\n'
                'There is a rock coming up on your left.')
     choice_txt = ('Do you:\n'
-                  'a. Abandon the boat for the rock?\n'
-                  'b. Stay in the boat and hold on tight?')
+                  'a. Abandon the boat for the rock\n'
+                  'b. Stay in the boat and hold on tight')
     options = ['a', 'b']
     opt_txt = 'Make your choice'
     exits = ['game_over', 'SPRITE']
@@ -173,3 +173,116 @@ def create_A3():
 
     A3 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
     return A3
+
+
+# B route, followed if Puzzle3 is passed.
+def create_B1():
+    """
+    Create the B1 Branches object
+    """
+    int_txt = ('You emerge into...a desert!\n'
+               'Sandy dunes stretch for miles in every direction.\n'
+               'You start walking. It is really hot and you quickly tire.\n'
+               'As you ascend a dune you see a village of huts ahead.\n'
+               'In the other direction is a green oasis.')
+    choice_txt = ('Do you:\n'
+                  'a. Head towards the village\n'
+                  'b. Head towards the oasis\n'
+                  'c. Continue through the desert')
+    options = ['a', 'b', 'c']
+    opt_txt = 'Make your choice'
+    exits = ['B2', 'B3', 'B4']
+    exit_txt = []
+    exit_txt.append('You take off towards the village.')
+    exit_txt.append('You take off towards the oasis.')
+    exit_txt.append('You continue through the desert.')
+
+    B1 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
+    return B1
+
+
+def create_B2():
+    """
+    Create the B2 Branches object
+    """
+    int_txt = ('You walk into the village and wander past the huts.\n'
+               'You decide to check inside one.\n'
+               'As you open the door you notice a group of sand monsters.\n'
+               'You try to shut the door but it is too late, they have '
+               'seen you.')
+    choice_txt = ('Do you:\n'
+                  'a. Run away\n'
+                  'b. Stay and fight\n')
+    options = ['a', 'b']
+    opt_txt = 'Make your choice'
+    exits = ['B1_return', 'game_over']
+    exit_txt = []
+    exit_txt.append('You turn and run away as fast as you can.\n'
+                    'At first you hear them chasing but soon lose them.\n'
+                    'You stop to catch your breath and find yourself '
+                    'on top of the same dune as before.')
+    exit_txt.append('You grab a club by the door and run into the group.\n'
+                    'You fight valiantly but they are too strong.\n'
+                    'They knock you to the floor and attack.')
+
+    B2 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
+    return B2
+
+
+def create_B3():
+    """
+    Create the B3 Branches object
+    """
+    int_txt = ('You stroll into the oasis, it is so much cooler here.\n'
+               'There is a large pool in the middle.\n'
+               'It looks like you must cross it to get to the other side.\n'
+               'There is a rope bridge from one side to the other.\n'
+               'There are also lily pads all the way across.')
+    choice_txt = ('Do you:\n'
+                  'a. Take the bridge\n'
+                  'b. Jump across the lily pads\n')
+    options = ['a', 'b']
+    opt_txt = 'Make your choice'
+    exits = ['SPRITE', 'game_over']
+    exit_txt = []
+    exit_txt.append('You head across the bridge.\n'
+                    'As you are crossing it creaks and begins to snap.\n'
+                    'You run across and jump onto the other side.\n'
+                    'There is a door ahead.')
+    exit_txt.append('You make your way steadily across the lily pads.\n'
+                    'Suddenly one sinks under your weight.\n'
+                    'You fall in and are dragged under.')
+
+    B3 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
+    return B3
+
+
+def create_B4():
+    """
+    Create the B4 Branches object
+    """
+    int_txt = ('You keep walking, you are getting hotter and hotter.\n'
+               'You will not make it much further.\n'
+               'At the top of the next dune you stumble across a camel.\n'
+               'It does not look friendly, it hisses and spits at you.\n'
+               'By the camel there is a thin flat board.')
+    choice_txt = ('Do you:\n'
+                  'a. Sandboard over the dunes\n'
+                  'b. Ride the camel\n')
+    options = ['a', 'b']
+    opt_txt = 'Make your choice'
+    exits = ['game_over', 'SPRITE']
+    exit_txt = []
+    exit_txt.append('You grab the board and have fun sliding down the dune.\n'
+                    'When you get to the bottom the board is useless.\n'
+                    'You start up the next dune carrying the board.\n'
+                    'You collapse with heat exhaustion.')
+    exit_txt.append('You grab the neck of the camel and it takes off '
+                    'before you can climb on.\n'
+                    'You cling on and swing yourself over its back.\n'
+                    'You hold on while it keeps running.\n'
+                    'Eventually It comes to a halt at the edge of the oasis.\n'
+                    'You see a door ahead.')
+
+    B4 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
+    return B4
