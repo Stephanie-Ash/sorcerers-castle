@@ -28,7 +28,7 @@ def create_intro():
     choice_txt = '"Will you embark on a quest to retrieve it for us?"'
     options = ['yes', 'no']
     opt_txt = 'Do you help?'
-    exits = ['ITEM_ONE', 'INTRO_NO']
+    exits = ['ITEM1', 'INTRO_NO']
     exit_txt = []
     exit_txt.append('"Thank you, I know you will save our forest."')
     exit_txt.append('"No?! What a big coward you are!"')
@@ -62,7 +62,7 @@ def create_hall():
     choice_txt = 'There are two doors, one to the left and one to the right.'
     options = ['left', 'right']
     opt_txt = 'Which door do you choose?'
-    exits = ['PUZZLE2', 'PUZZLE3']
+    exits = ['puzzle2', 'puzzle3']
     exit_txt = []
     exit_txt.append('You open the door to the left.')
     exit_txt.append('You open the door to the right.')
@@ -286,3 +286,97 @@ def create_B4():
 
     B4 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
     return B4
+
+
+# C route, followed if player escapes the dungeon.
+def create_C1():
+    """
+    Create the C1 Branches object
+    """
+    int_txt = ('You walk into a dark, stinky sewer, yuk!\n'
+               'You continue forward until you see three tunnels ahead.\n')
+    choice_txt = ('There is light coming from the first,\n'
+                  'the sound of rushing water from the second and\n'
+                  'the squeaking sound of rats from the third.')
+    options = ['1', '2', '3']
+    opt_txt = 'Which tunnel do you choose?'
+    exits = ['game_over', 'C2', 'C3']
+    exit_txt = []
+    exit_txt.append('You wander down the first tunnel towards the light.\n'
+                    'But it is not light it is fire!\n'
+                    'It speeds towards you and engulfs you.')
+    exit_txt.append('You take the middle tunnel following the sound of water.')
+    exit_txt.append('You take the third tunnel.')
+
+    C1 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
+    return C1
+
+
+def create_C2():
+    """
+    Create the C2 Branches object
+    """
+    int_txt = ('More water and sewage comes into the tunnel from the sides.\n'
+               'It has reached your waist and is still rising.')
+    choice_txt = ('Do you:\n'
+                  'a. Continue forward\n'
+                  'b. Turn back the way you came\n')
+    options = ['a', 'b']
+    opt_txt = 'Make your choice'
+    exits = ['game_over', 'C1_return']
+    exit_txt = []
+    exit_txt.append('You let the water take you and float down the tunnel.\n'
+                    'At the end there is a grate blocking your path.\n'
+                    'There is no way through, the water keeps rising.\n')
+    exit_txt.append('The turn back the way you came, fighting the water.\n'
+                    'You arrive back at the entrance of the tunnel.\n'
+                    'You turn and look again at the three tunnels')
+
+    C2 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
+    return C2
+
+
+def create_C3():
+    """
+    Create the C3 Branches object
+    """
+    int_txt = ('The sound of rats gets louder the further you go.\n'
+               'You feel them running past your feet.\n'
+               'You arrive at another tunnel branch.')
+    choice_txt = ('There is a breeze coming from the tunnel on the left.\n'
+                  'A river of rats runs down the one on the right.')
+    options = ['left', 'right']
+    opt_txt = 'Which tunnel do you choose'
+    exits = ['game_over', 'SPRITE']
+    exit_txt = []
+    exit_txt.append('You take the left and walk towards the breeze.\n'
+                    'Suddenly the floor drops away from you and you fall.')
+    exit_txt.append('You take the right and get carried along by the rats.\n'
+                    'You arrive in a wider cavern. There is a door ahead.')
+
+    C3 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
+    return C3
+
+
+def create_sprite():
+    """
+    Create the sprite Branches object.
+    Reached if the player makes it through the A, B or C routes
+    """
+    int_txt = ('Before you can reach the door a sprite appears.\n'
+               '"Oh you must be the person sent to save the forest.\n'
+               'I should not be here but I wanted to see the castle"')
+    choice_txt = ('"Unfortunately I have dropped my magic beads.\n'
+                  'I cannot escape without them.\n'
+                  'Will you help me collect them?"')
+    options = ['yes', 'no']
+    opt_txt = 'Do you help?'
+    exits = ['ITEM2', 'puzzle4']
+    exit_txt = []
+    exit_txt.append('You collect up all the beads and hand them over.')
+    exit_txt.append('"Fine suit yourself!"\n'
+                    'You walk through the door.')
+    exit_txt.append('You take the third tunnel.')
+
+    sprite = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
+    return sprite
