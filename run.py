@@ -1,6 +1,5 @@
 import classes
 
 
-test = classes.create_intro()
-print(f'{test.int_txt}\n')
-print(f'{test.choice_txt}\n')
+test = classes.create_dungeon()
+print(test.exit_txt[1])
