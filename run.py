@@ -42,7 +42,7 @@ def create_player():
     the player dictionary. While loop will ensure a name is given.
     """
     global PLAYER
-    PLAYER = {'name': '', 'Inventory': []}
+    PLAYER = {'name': '', 'inventory': []}
 
     printing('"Thank stars I have found someone"\n')
 
@@ -90,11 +90,20 @@ def make_selection(branch):
         if validate_choice(choice, branch):
             break
 
-    for i, j, k in zip(branch.options, branch.exits, branch.exit_txt):
-        if choice.lower() == i:
-            exit = j
-            exit_text = k
-            printing(f'\n{exit_text}\n\n')
+    if len(branch.exit_txt) == 1:
+        PLAYER['inventory'].append(choice.lower())
+        exit = branch.exits[0]
+        printing(f'\n\nYou take the {choice.lower()} '
+                 'and place it in your bag.\n')
+        printing(f'{branch.exit_txt[0]}\n\n')
+    else:
+        for i, j, k in zip(branch.options, branch.exits, branch.exit_txt):
+            if choice.lower() == i:
+                exit = j
+                exit_text = k
+                printing(f'\n{exit_text}\n\n')
+
+    choose_destination(exit)
 
 
 def validate_choice(selection, branch):
@@ -111,6 +120,47 @@ def validate_choice(selection, branch):
         return False
     else:
         return True
+
+
+def choose_destination(exit):
+    """
+    Choose the appropriate function based on the player's choice and
+    so decide the route of the story.
+    """
+    if exit['type'] == 'game over':
+        game_over()
+    elif exit['route'] == 'puzzle1':
+        puzzle_one()
+    elif exit['route'] == 'puzzle2':
+        puzzle_two()
+    elif exit['route'] == 'puzzle3':
+        puzzle_three()
+    elif exit['route'] == 'puzzle4':
+        puzzle_four()
+    elif exit['type'] == 'return':
+        make_selection(exit['route'])
+    else:
+        describe_location(exit['route'])
+
+
+def puzzle_one():
+    print('puzzle1')
+
+
+def puzzle_two():
+    print('puzzle2')
+
+
+def puzzle_three():
+    print('puzzle3')
+
+
+def puzzle_four():
+    print('puzzle4')
+
+
+def game_over():
+    print('game over')
 
 
 start_game()
