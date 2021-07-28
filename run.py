@@ -70,22 +70,23 @@ def describe_location(branch):
     printing(f'{branch.int_txt}\n\n')
     printing(f'{branch.choice_txt}\n\n')
 
-    if len(branch.options) == 2:
-        make_selection_two(branch)
-    else:
-        make_selection_three(branch)
+    make_selection(branch)
 
 
-def make_selection_two(branch):
+def make_selection(branch):
     """
     Ask the player to make a choice via the teminal using the 'options'
     Branches instance attribute.
     The While loop will request input until a valid choice is made.
     """
-
     while True:
-        choice = input(f'{branch.opt_txt} '
-                       f'({branch.options[0]}/{branch.options[1]})\n')
+        if len(branch.options) == 2:
+            choice = input(f'{branch.opt_txt} '
+                           f'({branch.options[0]}/{branch.options[1]})\n')
+        else:
+            choice = input(f'{branch.opt_txt} '
+                           f'({branch.options[0]}/{branch.options[1]}/'
+                           f'{branch.options[2]})\n')
         if validate_choice(choice, branch):
             break
 
@@ -94,8 +95,6 @@ def make_selection_two(branch):
             exit = j
             exit_text = k
             printing(f'\n{exit_text}\n\n')
-
-    choose_destination(exit)
 
 
 def validate_choice(selection, branch):
