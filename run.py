@@ -21,7 +21,7 @@ def printing(text):
 def start_game():
     """
     Start the game. Print the game title
-    and introductory text
+    and introductory text.
     """
     printing("*****************************************\n")
     printing("*         The Sorcerer's Castle         *\n")
@@ -54,7 +54,25 @@ def create_player():
             break
 
     PLAYER['name'] = name
+    printing('\n\n')
+    printing(f'"{PLAYER["name"]} the forest of high elms needs your help.\n')
+
+    describe_location(classes.create_intro())
+
+
+def describe_location(branch):
+    """
+    Provide an initial description of the area and
+    give a description of the choices the player will have to make,
+    before calling the selection functions.
+    """
+    printing(f'{branch.int_txt}\n\n')
+    printing(f'{branch.choice_txt}\n')
+
+    if len(branch.options) == 2:
+        make_selection_two(branch)
+    else:
+        make_selection_three(branch)
 
 
 start_game()
-print(PLAYER)

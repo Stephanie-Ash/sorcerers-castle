@@ -21,8 +21,7 @@ def create_intro():
     """
     Create the intro Branches object
     """
-    int_txt = ('"The Forest of High Elms needs your help.\n'
-               'The Evil Sourcerer has poisoned the Tree of Life '
+    int_txt = ('The Evil Sourcerer has poisoned the Tree of Life '
                'and the forest is dying.\n'
                'He has locked the antidote in his castle."')
     choice_txt = '"Will you embark on a quest to retrieve it for us?"'
