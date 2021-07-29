@@ -183,7 +183,37 @@ def puzzle_one():
 
 
 def puzzle_two():
-    print('puzzle2')
+    """
+    Ask the player a word puzzle and validate their input.
+    Choose route  based on whether the answer is correct.
+    """
+    printing('You walk into a gloomy room lit by torches.\n'
+             'The room is so tall you cannot see the ceiling.\n'
+             'The door slams shut and disappears.\n'
+             'There is a puzzle written on the wall.\n\n'
+             'Fill in the spaces to create a word:\n'
+             '_ _D U S T_ _\n\n')
+
+    while True:
+        answer = input('Enter your answer:\n')
+        if answer == '':
+            print('No answer provided, please enter an answer.\n')
+        elif not answer.isalpha():
+            print('\nYour answer must only include letters.\n')
+        elif len(answer) != 8:
+            print('\nYour answer must be 8 letters in length.\n')
+        else:
+            break
+
+    if answer.upper() == 'INDUSTRY':
+        printing('\nA door appears in the opposite wall.\n'
+                 'You open it and step through.\n')
+        describe_location(classes.create_a1())
+    else:
+        printing('\nWRONG appears on the wall.\n'
+                 'You are suddenly lifted upwards.\n'
+                 'You continue to rise but feel like you are falling.\n')
+        describe_location(classes.create_dungeon())
 
 
 def puzzle_three():
@@ -196,12 +226,12 @@ def puzzle_three():
              'You look out of the windows and see you are very high up.\n'
              'How did that happen?!\n'
              'There is a trapdoor on the floor with a sign in the centre.\n'
-             'It looks like a puzzle. There is a key pad next to it.\n\n'
+             'It looks like a puzzle.\n\n'
              'The puzzle reads:\n'
              'if tree = 48 and branch = 46 what does leaf equal?\n\n')
 
     while True:
-        answer = input('Input your answer:\n')
+        answer = input('Enter your answer:\n')
         try:
             int(answer)
             break
@@ -235,7 +265,7 @@ def puzzle_four():
              '0, 1, 1, 2, 3, 5...\n\n')
 
     while True:
-        answer = input('Input your answer:\n')
+        answer = input('Enter your answer:\n')
         try:
             int(answer)
             break
@@ -246,7 +276,7 @@ def puzzle_four():
         describe_location(classes.create_item3())
     else:
         printing('"Muahahaha" Evil laughter fills the air.\n'
-                 'The electrified force field rushes straight into you')  
+                 'The electrified force field rushes straight into you')
         game_over()
 
 
@@ -254,5 +284,4 @@ def game_over():
     print('game over')
 
 
-# start_game()
-puzzle_four()
+start_game()
