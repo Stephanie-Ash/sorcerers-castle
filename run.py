@@ -137,6 +137,8 @@ def choose_destination(exit):
         puzzle_three()
     elif exit['route'] == 'puzzle4':
         puzzle_four()
+    elif exit['route'] == 'end_room':
+        end_room()
     elif exit['type'] == 'retrace' and exit['route'] == 'b1':
         make_selection(classes.create_b1())
     elif exit['type'] == 'retrace' and exit['route'] == 'c1':
@@ -286,9 +288,57 @@ def validate_answer(answer):
     return True
 
 
+def end_room():
+    """
+    Final destination. Decide whether the player wins or loses
+    based on the correct items are in the inventory of the
+    PLAYER dictionary.
+    """
+    printing('You open the door at the top to be met with a stone wall.\n'
+             'The wall stretches all the way to the ceiling.\n')
+
+    if 'sledgehammer' not in PLAYER['inventory']:
+        printing('You look in your bag but have nothing you can use to\n'
+                 'knock down a wall\n'
+                 'You run into it as hard as you can.\n')
+        game_over()
+    else:
+        printing('You take the sledgehammer from your bag and\n'
+                 'smash a hole through the wall.\n\n')
+        printing('You walk through the hole and are faced with a wall\n'
+                 'of twisting, interlocking vines.\n')
+        if 'axe' not in PLAYER['inventory']:
+            printing('You look in your bag but have nothing that will\n'
+                     'chop down the vines.\n'
+                     'You try to push your way through but get caught.\n')
+            game_over()
+        else:
+            printing('You take the axe from your bag and cut a path '
+                     'through the vines.\n\n')
+            printing('Once through the vines you are met with a wall '
+                     'of fire.\n')
+            if 'waterskin' not in PLAYER['inventory']:
+                printing('You look in your bag but have nothing to put '
+                         'out fire\n'
+                         'You try to run through but catch alight.\n')
+                game_over()
+            else:
+                printing('You take the waterskin out of your bag and douse '
+                         'the fire.\n'
+                         'You move forward and collect the antidote.\n'
+                         'Congratulations! You have saved the forest.\n')
+
+
 def game_over():
-    print('game over')
+    """
+    Print a game over message when the player chooses the
+    wrong option.
+    """
+    printing("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n")
+    printing("X               Game Over               X\n")
+    printing("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n\n")
+
+    print("To play again click 'Play Game'.")
 
 
-# start_game()
-puzzle_three()
+start_game()
