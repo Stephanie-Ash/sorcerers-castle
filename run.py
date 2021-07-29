@@ -137,8 +137,10 @@ def choose_destination(exit):
         puzzle_three()
     elif exit['route'] == 'puzzle4':
         puzzle_four()
-    elif exit['type'] == 'return':
-        make_selection(exit['route'])
+    elif exit['type'] == 'retrace' and exit['route'] == 'b1':
+        make_selection(classes.create_b1())
+    elif exit['type'] == 'retrace' and exit['route'] == 'c1':
+        make_selection(classes.create_c1())
     else:
         describe_location(exit['route'])
 

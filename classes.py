@@ -197,7 +197,7 @@ def create_b1():
                   'c. Continue through the desert')
     options = ['a', 'b', 'c']
     opt_txt = 'Make your choice'
-    exits = [{'type': 'story', 'route': create_b2},
+    exits = [{'type': 'story', 'route': create_b2()},
              {'type': 'story', 'route': create_b3()},
              {'type': 'story', 'route': create_b4()}]
     exit_txt = []
@@ -223,13 +223,17 @@ def create_b2():
                   'b. Stay and fight\n')
     options = ['a', 'b']
     opt_txt = 'Make your choice'
-    exits = [{'type': 'return', 'route': create_b1},
+    exits = [{'type': 'retrace', 'route': 'b1'},
              {'type': 'game over', 'route': 'game_over'}]
     exit_txt = []
     exit_txt.append('You turn and run away as fast as you can.\n'
                     'At first you hear them chasing but soon lose them.\n'
                     'You stop to catch your breath and find yourself '
-                    'on top of the same dune as before.')
+                    'on top of the same dune as before.\n'
+                    'Do you:\n'
+                    'a. Head towards the village\n'
+                    'b. Head towards the oasis\n'
+                    'c. Continue through the desert')
     exit_txt.append('You grab a club by the door and run into the group.\n'
                     'You fight valiantly but they are too strong.\n'
                     'They knock you to the floor and attack.')
@@ -312,7 +316,7 @@ def create_c1():
     options = ['1', '2', '3']
     opt_txt = 'Which tunnel do you choose?'
     exits = [{'type': 'game over', 'route': 'game_over'},
-             {'type': 'story', 'route': create_c2},
+             {'type': 'story', 'route': create_c2()},
              {'type': 'story', 'route': create_c3()}]
     exit_txt = []
     exit_txt.append('You wander down the first tunnel towards the light.\n'
@@ -337,7 +341,7 @@ def create_c2():
     options = ['a', 'b']
     opt_txt = 'Make your choice'
     exits = [{'type': 'game over', 'route': 'game_over'},
-             {'type': 'return', 'route': create_c1}]
+             {'type': 'retrace', 'route': 'c1'}]
     exit_txt = []
     exit_txt.append('You let the water take you and float down the tunnel.\n'
                     'At the end there is a grate blocking your path.\n'
