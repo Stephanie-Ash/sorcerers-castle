@@ -84,7 +84,7 @@ def create_dungeon():
     choice_txt = 'You find a metal hook on a rope and an old wooden ladder.'
     options = ['rope', 'ladder']
     opt_txt = 'Which item do you use?'
-    exits = [{'type': 'story', 'route': create_c1},
+    exits = [{'type': 'story', 'route': create_c1()},
              {'type': 'game over', 'route': 'game_over'}]
     exit_txt = []
     exit_txt.append('You grab the rope, swing it around your head '
@@ -198,8 +198,8 @@ def create_b1():
     options = ['a', 'b', 'c']
     opt_txt = 'Make your choice'
     exits = [{'type': 'story', 'route': create_b2},
-             {'type': 'story', 'route': create_b3},
-             {'type': 'story', 'route': create_b4}]
+             {'type': 'story', 'route': create_b3()},
+             {'type': 'story', 'route': create_b4()}]
     exit_txt = []
     exit_txt.append('You take off towards the village.')
     exit_txt.append('You take off towards the oasis.')
@@ -252,7 +252,7 @@ def create_b3():
                   'b. Jump across the lily pads\n')
     options = ['a', 'b']
     opt_txt = 'Make your choice'
-    exits = [{'type': 'story', 'route': create_sprite},
+    exits = [{'type': 'story', 'route': create_sprite()},
              {'type': 'game over', 'route': 'game_over'}]
     exit_txt = []
     exit_txt.append('You head across the bridge.\n'
@@ -282,7 +282,7 @@ def create_b4():
     options = ['a', 'b']
     opt_txt = 'Make your choice'
     exits = [{'type': 'game over', 'route': 'game_over'},
-             {'type': 'story', 'route': create_sprite}]
+             {'type': 'story', 'route': create_sprite()}]
     exit_txt = []
     exit_txt.append('You grab the board and have fun sliding down the dune.\n'
                     'When you get to the bottom the board is useless.\n'
@@ -313,7 +313,7 @@ def create_c1():
     opt_txt = 'Which tunnel do you choose?'
     exits = [{'type': 'game over', 'route': 'game_over'},
              {'type': 'story', 'route': create_c2},
-             {'type': 'story', 'route': create_c3}]
+             {'type': 'story', 'route': create_c3()}]
     exit_txt = []
     exit_txt.append('You wander down the first tunnel towards the light.\n'
                     'But it is not light it is fire!\n'
@@ -362,7 +362,7 @@ def create_c3():
     options = ['left', 'right']
     opt_txt = 'Which tunnel do you choose'
     exits = [{'type': 'game over', 'route': 'game over'},
-             {'type': 'story', 'route': create_sprite}]
+             {'type': 'story', 'route': create_sprite()}]
     exit_txt = []
     exit_txt.append('You take the left and walk towards the breeze.\n'
                     'Suddenly the floor drops away from you and you fall.')
@@ -386,7 +386,7 @@ def create_sprite():
                   'Will you help me collect them?"')
     options = ['yes', 'no']
     opt_txt = 'Do you help?'
-    exits = [{'type': 'item', 'route': create_item2},
+    exits = [{'type': 'item', 'route': create_item2()},
              {'type': 'puzzle', 'route': 'puzzle4'}]
     exit_txt = []
     exit_txt.append('You collect up all the beads and hand them over.')

@@ -154,7 +154,7 @@ def puzzle_one():
              'There is a large wooden door in the centre of the wall.\n'
              'You try to push it open but it will not budge.\n'
              'In the centre there are a series of letters.\n'
-             'The letters can be moved.\n'
+             'The letters can be moved.\n\n'
              'They Spell out: MOON STARER\n\n')
 
     anagram = 'MOONSTARER'
@@ -171,17 +171,50 @@ def puzzle_one():
             break
 
     if answer.upper() == 'ASTRONOMER':
+        printing('You rearrange the letters and the door swings open.\n')
         describe_location(classes.create_hall())
     else:
+        printing('You rearrange the letters.\n'
+                 'Suddenly you hear a rush of water.\n'
+                 'A raging torrent comes and washes you away.')
         game_over()
+
+
+def puzzle_three():
+    """
+    Ask the player a number puzzle and validate their answer.
+    Choose a route based on whether the answer is correct.
+    """
+    printing('You walk into a low ceilinged room with many windows.\n'
+             'The door behind you shuts and locks.\n'
+             'You look out of the windows and see you are very high up.\n'
+             'How did that happen?!\n'
+             'There is a trapdoor on the floor with a sign in the centre.\n'
+             'It looks like a puzzle. There is a key pad next to it.\n\n'
+             'The puzzle reads:\n'
+             'if tree = 48 and branch = 46 what does leaf equal?\n\n')
+
+    while True:
+        answer = input('Input your answer:\n')
+        try:
+            int(answer)
+            break
+        except ValueError:
+            print('\nYou must enter a number\n')
+
+    if int(answer) == 24:
+        printing('The trapdoor makes a clunking sound.\n'
+                 'It opens to reveal a flight of stairs which you descend.\n')
+        describe_location(classes.create_b1())
+    else:
+        printing('The trapdoor makes a clunking noise.\n'
+                 'Suddenly the whole floor of the room disappears.\n'
+                 'You fall for what seems like ages.\n')
+        describe_location(classes.create_dungeon())
 
 
 def puzzle_two():
     print('puzzle2')
-
-
-def puzzle_three():
-    print('puzzle3')
 
 
 def puzzle_four():
