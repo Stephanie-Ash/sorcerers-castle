@@ -168,7 +168,7 @@ def puzzle_one():
         elif not all(char in answer.upper() for char in anagram):
             print('\nYou must use the letters provided.\n')
         elif len(answer) != 10:
-            print('\nYou must use the letters provided.\n')
+            print('\nYour answer must be 10 letters in length.\n')
         else:
             break
 
@@ -232,11 +232,9 @@ def puzzle_three():
 
     while True:
         answer = input('Enter your answer:\n')
-        try:
-            int(answer)
+
+        if validate_answer(answer):
             break
-        except ValueError:
-            print('\nYou must enter a number\n')
 
     if int(answer) == 24:
         printing('The trapdoor makes a clunking sound.\n'
@@ -266,11 +264,9 @@ def puzzle_four():
 
     while True:
         answer = input('Enter your answer:\n')
-        try:
-            int(answer)
+
+        if validate_answer(answer):
             break
-        except ValueError:
-            print('\nYou must enter a number\n')
 
     if int(answer) == 8:
         describe_location(classes.create_item3())
@@ -280,8 +276,19 @@ def puzzle_four():
         game_over()
 
 
+def validate_answer(answer):
+    try:
+        int(answer)
+    except ValueError:
+        print('\nYou must enter a number\n')
+        return False
+
+    return True
+
+
 def game_over():
     print('game over')
 
 
-start_game()
+# start_game()
+puzzle_three()
