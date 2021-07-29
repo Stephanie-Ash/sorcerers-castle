@@ -182,6 +182,10 @@ def puzzle_one():
         game_over()
 
 
+def puzzle_two():
+    print('puzzle2')
+
+
 def puzzle_three():
     """
     Ask the player a number puzzle and validate their answer.
@@ -215,16 +219,40 @@ def puzzle_three():
         describe_location(classes.create_dungeon())
 
 
-def puzzle_two():
-    print('puzzle2')
-
-
 def puzzle_four():
-    print('puzzle4')
+    """
+    Ask the player a final number puzzle.
+    Validate their input.
+    If correct continue to the final item select, else game over.
+    """
+    printing('You find yourself back in the castle.\n'
+             'There is a staircase ahead with a forcefield blocking it.\n'
+             'In bright letters a message reads:\n'
+             'This leads to the inner sanctum of the great sourcerer, \n'
+             'lighter of fires, builder of walls, grower of vines.\n'
+             'Only those who can solve this riddle may pass.\n\n'
+             'What is the next number in the sequence:\n'
+             '0, 1, 1, 2, 3, 5...\n\n')
+
+    while True:
+        answer = input('Input your answer:\n')
+        try:
+            int(answer)
+            break
+        except ValueError:
+            print('\nYou must enter a number\n')
+
+    if int(answer) == 8:
+        describe_location(classes.create_item3())
+    else:
+        printing('"Muahahaha" Evil laughter fills the air.\n'
+                 'The electrified force field rushes straight into you')  
+        game_over()
 
 
 def game_over():
     print('game over')
 
 
-start_game()
+# start_game()
+puzzle_four()
