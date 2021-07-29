@@ -144,7 +144,36 @@ def choose_destination(exit):
 
 
 def puzzle_one():
-    print('puzzle1')
+    """
+    Function to ask the player an anagram puzzle and validate input.
+    If the player passes they will continue in the story.
+    Otherwise it will be game over.
+    """
+    printing('You arrive at the castle.\n'
+             'It has massive stone walls but no windows.\n'
+             'There is a large wooden door in the centre of the wall.\n'
+             'You try to push it open but it will not budge.\n'
+             'In the centre there are a series of letters.\n'
+             'The letters can be moved.\n'
+             'They Spell out: MOON STARER\n\n')
+
+    anagram = 'MOONSTARER'
+
+    while True:
+        answer = input('Rearrange the letters to form a single word:\n')
+        if answer == '':
+            print('No answer provided, please enter an answer.\n')
+        elif not all(char in answer.upper() for char in anagram):
+            print('\nYou must use the letters provided.\n')
+        elif len(answer) != 10:
+            print('\nYou must use the letters provided.\n')
+        else:
+            break
+
+    if answer.upper() == 'ASTRONOMER':
+        describe_location(classes.create_hall())
+    else:
+        game_over()
 
 
 def puzzle_two():
