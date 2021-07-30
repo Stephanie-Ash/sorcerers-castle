@@ -44,10 +44,10 @@ def create_player():
     global PLAYER
     PLAYER = {'name': '', 'inventory': []}
 
-    printing('"Thank stars I have found someone"\n')
+    printing('"Thank stars I have found someone."\n')
 
     while True:
-        name = input('"What is your name?"\n')
+        name = input('"What is your name?":\n')
         if name == '':
             print('No name provided, please enter a name.\n')
         else:
@@ -55,7 +55,7 @@ def create_player():
 
     PLAYER['name'] = name
     printing('\n\n')
-    printing(f'"{PLAYER["name"]} the forest of high elms needs your help.\n')
+    printing(f'"{PLAYER["name"]} the forest of High Elms needs your help.\n')
 
     describe_location(classes.create_intro())
 
@@ -82,11 +82,11 @@ def make_selection(branch):
     while True:
         if len(branch.options) == 2:
             choice = input(f'{branch.opt_txt} '
-                           f'({branch.options[0]}/{branch.options[1]})\n')
+                           f'({branch.options[0]}/{branch.options[1]}):\n')
         else:
             choice = input(f'{branch.opt_txt} '
                            f'({branch.options[0]}/{branch.options[1]}/'
-                           f'{branch.options[2]})\n')
+                           f'{branch.options[2]}):\n')
         if validate_choice(choice, branch):
             break
 
@@ -156,7 +156,6 @@ def puzzle_one():
     printing('You arrive at the castle.\n'
              'It has massive stone walls but no windows.\n'
              'There is a large wooden door in the centre of the wall.\n'
-             'You try to push it open but it will not budge.\n'
              'In the centre there are a series of letters.\n'
              'The letters can be moved.\n\n'
              'They Spell out: MOON STARER\n\n')
@@ -224,8 +223,7 @@ def puzzle_three():
     Choose a route based on whether the answer is correct.
     """
     printing('You walk into a low ceilinged room with many windows.\n'
-             'The door behind you shuts and locks.\n'
-             'You look out of the windows and see you are very high up.\n'
+             'You look out of the windows and see that you are very high up.\n'
              'How did that happen?!\n'
              'There is a trapdoor on the floor with a sign in the centre.\n'
              'It looks like a puzzle.\n\n'
@@ -262,7 +260,7 @@ def puzzle_four():
              'lighter of fires, builder of walls, grower of vines.\n'
              'Only those who can solve this riddle may pass.\n\n'
              'What is the next number in the sequence:\n'
-             '0, 1, 1, 2, 3, 5...\n\n')
+             '1, 1, 2, 3, 5...\n\n')
 
     while True:
         answer = input('Enter your answer:\n')
@@ -273,8 +271,8 @@ def puzzle_four():
     if int(answer) == 8:
         describe_location(classes.create_item3())
     else:
-        printing('"Muahahaha" Evil laughter fills the air.\n'
-                 'The electrified force field rushes straight into you')
+        printing('"\nMuahahaha" Evil laughter fills the air.\n'
+                 'The electrified force field rushes straight into you\n\n')
         game_over()
 
 
@@ -299,8 +297,8 @@ def end_room():
 
     if 'sledgehammer' not in PLAYER['inventory']:
         printing('You look in your bag but have nothing you can use to\n'
-                 'knock down a wall\n'
-                 'You run into it as hard as you can.\n')
+                 'knock down a wall.\n'
+                 'You run into it as hard as you can.\n\n')
         game_over()
     else:
         printing('You take the sledgehammer from your bag and\n'
@@ -310,7 +308,7 @@ def end_room():
         if 'axe' not in PLAYER['inventory']:
             printing('You look in your bag but have nothing that will\n'
                      'chop down the vines.\n'
-                     'You try to push your way through but get caught.\n')
+                     'You try to push your way through but get caught.\n\n')
             game_over()
         else:
             printing('You take the axe from your bag and cut a path '
@@ -319,14 +317,15 @@ def end_room():
                      'of fire.\n')
             if 'waterskin' not in PLAYER['inventory']:
                 printing('You look in your bag but have nothing to put '
-                         'out fire\n'
-                         'You try to run through but catch alight.\n')
+                         'out fire.\n'
+                         'You try to run through but catch alight.\n\n')
                 game_over()
             else:
                 printing('You take the waterskin out of your bag and douse '
                          'the fire.\n'
-                         'You move forward and collect the antidote.\n'
-                         'Congratulations! You have saved the forest.\n')
+                         'You move forward and collect the antidote.\n\n'
+                         f'Congratulations {PLAYER["name"]}! '
+                         'You have saved the forest.\n')
 
 
 def game_over():

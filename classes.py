@@ -78,8 +78,8 @@ def create_dungeon():
     Create the dungeon Branches object
     """
     int_txt = ('You land with a bump in a cold dark dungeon.\n'
-               'As your eyes adjust you see that there is a door '
-               'set high in the wall in accross from you.\n'
+               'You see that there is a door set high in the wall '
+               'accross from you.\n'
                'You search around for something to help you climb.')
     choice_txt = 'You find a metal hook on a rope and an old wooden ladder.'
     options = ['rope', 'ladder']
@@ -106,16 +106,16 @@ def create_a1():
     """
     int_txt = ('You find yourself in a...jungle!\n'
                'The trees are tightly packed together and wild looking,\n'
-               'with many strong looking vines hanging from them.\n'
+               'with many strong vines hanging from them.\n'
                'There is a quickly flowing river running through the trees.\n'
-               'You spy a boat tied at the edge of the river')
+               'You spy a boat tied at the edge of the river.')
     choice_txt = ('Do you:\n'
-                  'a. Swing through the trees using the vines?\n'
-                  'b. Try your luck with the boat?')
+                  'a. Swing through the trees using the vines\n'
+                  'b. Try your luck with the boat')
     options = ['a', 'b']
     opt_txt = 'Make your choice'
-    exits = [{'type': 'story', 'route': create_a2},
-             {'type': 'story', 'route': create_a3}]
+    exits = [{'type': 'story', 'route': create_a2()},
+             {'type': 'story', 'route': create_a3()}]
     exit_txt = []
     exit_txt.append('You climb onto the nearest sturdy looking vine '
                     'and start swinging.')
@@ -130,22 +130,19 @@ def create_a2():
     Create the a2 Branches object
     """
     int_txt = ('You are making great progress until you suddenly swing '
-               'into a clearing.\nwithout the next vine to grab onto '
-               'you swing back into a tree and drop to the floor.\n'
-               'Just as you are about to walk across the clearing you '
-               'spy a jaguar loitering on the edge')
+               'into a clearing.\nYou drop to the floor.\n'
+               'You spy a jaguar loitering in the centre of the clearing.')
     choice_txt = ('Do you:\n'
                   'a. Create a distraction\n'
                   'b. Try to sneak past the jaguar')
     options = ['a', 'b']
     opt_txt = 'Make your choice'
-    exits = [{'type': 'story', 'route': create_sprite},
+    exits = [{'type': 'story', 'route': create_sprite()},
              {'type': 'game over', 'route': 'game_over'}]
     exit_txt = []
     exit_txt.append('You throw a branch into the distant trees.\n'
                     'The jaguar takes off after it and you run.\n'
-                    'All of a sudden you come to a steep hill.\n'
-                    'You tumble down and land next to a pool of water.\n'
+                    'You finally stop next to a pool of water.\n'
                     'There is a door ahead.')
     exit_txt.append('You continue quietly.\n'
                     'Just as you make it past the jaguar "snap" you stand '
@@ -168,9 +165,9 @@ def create_a3():
     options = ['a', 'b']
     opt_txt = 'Make your choice'
     exits = [{'type': 'game over', 'route': 'game_over'},
-             {'type': 'story', 'route': create_sprite}]
+             {'type': 'story', 'route': create_sprite()}]
     exit_txt = []
-    exit_txt.append('You jump onto the rock but it is too slippery\n'
+    exit_txt.append('You jump onto the rock but it is too slippery.\n'
                     'You fall into the water and are dragged under.')
     exit_txt.append('You duck down and grab tight to the edge of the boat.\n'
                     'It rushes down the steep rapid but miraculously stays '
@@ -214,8 +211,8 @@ def create_b2():
     Create the b2 Branches object
     """
     int_txt = ('You walk into the village and wander past the huts.\n'
-               'You decide to check inside one.\n'
-               'As you open the door you notice a group of sand monsters.\n'
+               'You open the door to one and notice a group '
+               'of sand monsters.\n'
                'You try to shut the door but it is too late, they have '
                'seen you.')
     choice_txt = ('Do you:\n'
@@ -229,7 +226,7 @@ def create_b2():
     exit_txt.append('You turn and run away as fast as you can.\n'
                     'At first you hear them chasing but soon lose them.\n'
                     'You stop to catch your breath and find yourself '
-                    'on top of the same dune as before.\n'
+                    'on top of the same dune as before.\n\n'
                     'Do you:\n'
                     'a. Head towards the village\n'
                     'b. Head towards the oasis\n'
@@ -248,7 +245,6 @@ def create_b3():
     """
     int_txt = ('You stroll into the oasis, it is so much cooler here.\n'
                'There is a large pool in the middle.\n'
-               'It looks like you must cross it to get to the other side.\n'
                'There is a rope bridge from one side to the other.\n'
                'There are also lily pads all the way across.')
     choice_txt = ('Do you:\n'
@@ -278,7 +274,6 @@ def create_b4():
     int_txt = ('You keep walking, you are getting hotter and hotter.\n'
                'You will not make it much further.\n'
                'At the top of the next dune you stumble across a camel.\n'
-               'It does not look friendly, it hisses and spits at you.\n'
                'By the camel there is a thin flat board.')
     choice_txt = ('Do you:\n'
                   'a. Sandboard over the dunes\n'
@@ -294,8 +289,7 @@ def create_b4():
                     'You collapse with heat exhaustion.')
     exit_txt.append('You grab the neck of the camel and it takes off '
                     'before you can climb on.\n'
-                    'You cling on and swing yourself over its back.\n'
-                    'You hold on while it keeps running.\n'
+                    'You hold on tight while it keeps running.\n'
                     'Eventually It comes to a halt at the edge of the oasis.\n'
                     'You see a door ahead.')
 
@@ -408,7 +402,7 @@ def create_item1():
     """
     int_txt = ('"Be careful on your quest the castle is full of traps.\n'
                'I hear that the sourcerer can even manipulate fire."')
-    choice_txt = ('"Here take an item to help you on your quest"')
+    choice_txt = ('"Here take an item to help you on your quest."')
     options = ['candle', 'waterskin', 'food']
     opt_txt = 'Which item do you take?'
     exits = [{'type': 'puzzle', 'route': 'puzzle1'}]
