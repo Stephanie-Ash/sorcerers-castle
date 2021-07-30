@@ -30,8 +30,8 @@ def create_intro():
     exits = [{'type': 'item', 'route': create_item1()},
              {'type': 'story', 'route': create_intro_no()}]
     exit_txt = []
-    exit_txt.append('"Thank you, I know you will save our forest."')
-    exit_txt.append('"No?! What a big coward you are!"')
+    exit_txt.append('\n"Thank you, I know you will save our forest."')
+    exit_txt.append('\n"No?! What a big coward you are!"')
 
     intro = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
     return intro
@@ -48,8 +48,8 @@ def create_intro_no():
     exits = [{'type': 'item', 'route': create_item1()},
              {'type': 'game over', 'route': 'game_over'}]
     exit_txt = []
-    exit_txt.append('"Thank you, I know you will save our forest."')
-    exit_txt.append('The elven woman runs off in a huff.')
+    exit_txt.append('\n"Thank you, I know you will save our forest."')
+    exit_txt.append('\nThe elven woman runs off in a huff.')
 
     intro_no = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
     return intro_no
@@ -66,8 +66,8 @@ def create_hall():
     exits = [{'type': 'puzzle', 'route': 'puzzle2'},
              {'type': 'puzzle', 'route': 'puzzle3'}]
     exit_txt = []
-    exit_txt.append('You open the door to the left.')
-    exit_txt.append('You open the door to the right.')
+    exit_txt.append('\nYou open the door to the left.')
+    exit_txt.append('\nYou open the door to the right.')
 
     hall = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
     return hall
@@ -87,11 +87,11 @@ def create_dungeon():
     exits = [{'type': 'story', 'route': create_c1()},
              {'type': 'game over', 'route': 'game_over'}]
     exit_txt = []
-    exit_txt.append('You grab the rope, swing it around your head '
+    exit_txt.append('\nYou grab the rope, swing it around your head '
                     'and throw it towards the door.\n'
                     'The hook connects and gets lodged.\n'
                     'You climb the rope and go through the door.')
-    exit_txt.append('You prop the ladder against the wall '
+    exit_txt.append('\nYou prop the ladder against the wall '
                     'and start climbing.\nYou are almost at the top '
                     'when the steps break and you fall.')
 
@@ -117,9 +117,9 @@ def create_a1():
     exits = [{'type': 'story', 'route': create_a2()},
              {'type': 'story', 'route': create_a3()}]
     exit_txt = []
-    exit_txt.append('You climb onto the nearest sturdy looking vine '
+    exit_txt.append('\nYou climb onto the nearest sturdy looking vine '
                     'and start swinging.')
-    exit_txt.append('You climb into the boat and speed down the river.')
+    exit_txt.append('\nYou climb into the boat and speed down the river.')
 
     a1 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
     return a1
@@ -140,11 +140,11 @@ def create_a2():
     exits = [{'type': 'story', 'route': create_sprite()},
              {'type': 'game over', 'route': 'game_over'}]
     exit_txt = []
-    exit_txt.append('You throw a branch into the distant trees.\n'
+    exit_txt.append('\nYou throw a branch into the distant trees.\n'
                     'The jaguar takes off after it and you run.\n'
                     'You finally stop next to a pool of water.\n'
                     'There is a door ahead.')
-    exit_txt.append('You continue quietly.\n'
+    exit_txt.append('\nYou continue quietly.\n'
                     'Just as you make it past the jaguar "snap" you stand '
                     'on a branch.\nThe jaguar grabs you.')
 
@@ -167,9 +167,9 @@ def create_a3():
     exits = [{'type': 'game over', 'route': 'game_over'},
              {'type': 'story', 'route': create_sprite()}]
     exit_txt = []
-    exit_txt.append('You jump onto the rock but it is too slippery.\n'
+    exit_txt.append('\nYou jump onto the rock but it is too slippery.\n'
                     'You fall into the water and are dragged under.')
-    exit_txt.append('You duck down and grab tight to the edge of the boat.\n'
+    exit_txt.append('\nYou duck down and grab tight to the edge of the boat.\n'
                     'It rushes down the steep rapid but miraculously stays '
                     'upright and intact.\nIt beaches at the edge of a deep '
                     'pool.\nYou get out, there is a door ahead.')
@@ -198,9 +198,9 @@ def create_b1():
              {'type': 'story', 'route': create_b3()},
              {'type': 'story', 'route': create_b4()}]
     exit_txt = []
-    exit_txt.append('You take off towards the village.')
-    exit_txt.append('You take off towards the oasis.')
-    exit_txt.append('You continue through the desert.')
+    exit_txt.append('\nYou take off towards the village.')
+    exit_txt.append('\nYou take off towards the oasis.')
+    exit_txt.append('\nYou continue through the desert.')
 
     b1 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
     return b1
@@ -217,13 +217,13 @@ def create_b2():
                'seen you.')
     choice_txt = ('Do you:\n'
                   'a. Run away\n'
-                  'b. Stay and fight\n')
+                  'b. Stay and fight')
     options = ['a', 'b']
     opt_txt = 'Make your choice'
     exits = [{'type': 'retrace', 'route': 'b1'},
              {'type': 'game over', 'route': 'game_over'}]
     exit_txt = []
-    exit_txt.append('You turn and run away as fast as you can.\n'
+    exit_txt.append('\nYou turn and run away as fast as you can.\n'
                     'At first you hear them chasing but soon lose them.\n'
                     'You stop to catch your breath and find yourself '
                     'on top of the same dune as before.\n\n'
@@ -231,7 +231,7 @@ def create_b2():
                     'a. Head towards the village\n'
                     'b. Head towards the oasis\n'
                     'c. Continue through the desert')
-    exit_txt.append('You grab a club by the door and run into the group.\n'
+    exit_txt.append('\nYou grab a club by the door and run into the group.\n'
                     'You fight valiantly but they are too strong.\n'
                     'They knock you to the floor and attack.')
 
@@ -249,17 +249,17 @@ def create_b3():
                'There are also lily pads all the way across.')
     choice_txt = ('Do you:\n'
                   'a. Take the bridge\n'
-                  'b. Jump across the lily pads\n')
+                  'b. Jump across the lily pads')
     options = ['a', 'b']
     opt_txt = 'Make your choice'
     exits = [{'type': 'story', 'route': create_sprite()},
              {'type': 'game over', 'route': 'game_over'}]
     exit_txt = []
-    exit_txt.append('You head across the bridge.\n'
+    exit_txt.append('\nYou head across the bridge.\n'
                     'As you are crossing it creaks and begins to snap.\n'
                     'You run across and jump onto the other side.\n'
                     'There is a door ahead.')
-    exit_txt.append('You make your way steadily across the lily pads.\n'
+    exit_txt.append('\nYou make your way steadily across the lily pads.\n'
                     'Suddenly one sinks under your weight.\n'
                     'You fall in and are dragged under.')
 
@@ -277,17 +277,17 @@ def create_b4():
                'By the camel there is a thin flat board.')
     choice_txt = ('Do you:\n'
                   'a. Sandboard over the dunes\n'
-                  'b. Ride the camel\n')
+                  'b. Ride the camel')
     options = ['a', 'b']
     opt_txt = 'Make your choice'
     exits = [{'type': 'game over', 'route': 'game_over'},
              {'type': 'story', 'route': create_sprite()}]
     exit_txt = []
-    exit_txt.append('You grab the board and have fun sliding down the dune.\n'
+    exit_txt.append('\nYou grab the board and slide down the dune.\n'
                     'When you get to the bottom the board is useless.\n'
                     'You start up the next dune carrying the board.\n'
                     'You collapse with heat exhaustion.')
-    exit_txt.append('You grab the neck of the camel and it takes off '
+    exit_txt.append('\nYou grab the neck of the camel and it takes off '
                     'before you can climb on.\n'
                     'You hold on tight while it keeps running.\n'
                     'Eventually It comes to a halt at the edge of the oasis.\n'
@@ -303,7 +303,7 @@ def create_c1():
     Create the c1 Branches object
     """
     int_txt = ('You walk into a dark, stinky sewer, yuk!\n'
-               'You continue forward until you see three tunnels ahead.\n')
+               'You continue forward until you see three tunnels ahead.')
     choice_txt = ('There is light coming from the first,\n'
                   'the sound of rushing water from the second and\n'
                   'the squeaking sound of rats from the third.')
@@ -313,11 +313,11 @@ def create_c1():
              {'type': 'story', 'route': create_c2()},
              {'type': 'story', 'route': create_c3()}]
     exit_txt = []
-    exit_txt.append('You wander down the first tunnel towards the light.\n'
+    exit_txt.append('\nYou wander down the first tunnel towards the light.\n'
                     'But it is not light it is fire!\n'
                     'It speeds towards you and engulfs you.')
-    exit_txt.append('You take the middle tunnel following the sound of water.')
-    exit_txt.append('You take the third tunnel.')
+    exit_txt.append('\nYou take the middle tunnel towards the sound of water.')
+    exit_txt.append('\nYou take the third tunnel.')
 
     c1 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
     return c1
@@ -331,16 +331,16 @@ def create_c2():
                'It has reached your waist and is still rising.')
     choice_txt = ('Do you:\n'
                   'a. Continue forward\n'
-                  'b. Turn back the way you came\n')
+                  'b. Turn back the way you came')
     options = ['a', 'b']
     opt_txt = 'Make your choice'
     exits = [{'type': 'game over', 'route': 'game_over'},
              {'type': 'retrace', 'route': 'c1'}]
     exit_txt = []
-    exit_txt.append('You let the water take you and float down the tunnel.\n'
+    exit_txt.append('\nYou let the water take you and float down the tunnel.\n'
                     'At the end there is a grate blocking your path.\n'
                     'There is no way through, the water keeps rising.\n')
-    exit_txt.append('The turn back the way you came, fighting the water.\n'
+    exit_txt.append('\nThe turn back the way you came, fighting the water.\n'
                     'You arrive back at the entrance of the tunnel.\n'
                     'You turn and look again at the three tunnels')
 
@@ -362,9 +362,9 @@ def create_c3():
     exits = [{'type': 'game over', 'route': 'game over'},
              {'type': 'story', 'route': create_sprite()}]
     exit_txt = []
-    exit_txt.append('You take the left and walk towards the breeze.\n'
+    exit_txt.append('\nYou take the left and walk towards the breeze.\n'
                     'Suddenly the floor drops away from you and you fall.')
-    exit_txt.append('You take the right and get carried along by the rats.\n'
+    exit_txt.append('\nYou take the right and get carried along by the rats.\n'
                     'You arrive in a wider cavern. There is a door ahead.')
 
     c3 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
@@ -387,8 +387,8 @@ def create_sprite():
     exits = [{'type': 'item', 'route': create_item2()},
              {'type': 'puzzle', 'route': 'puzzle4'}]
     exit_txt = []
-    exit_txt.append('You collect up all the beads and hand them over.')
-    exit_txt.append('"Fine suit yourself!"\n'
+    exit_txt.append('\nYou collect up all the beads and hand them over.')
+    exit_txt.append('\n"Fine suit yourself!"\n'
                     'You walk through the door.')
 
     sprite = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
@@ -400,7 +400,7 @@ def create_item1():
     """
     Create the item1 Branches object
     """
-    int_txt = ('"Be careful on your quest the castle is full of traps.\n'
+    int_txt = ('"Be careful on your quest, the castle is full of traps.\n'
                'I hear that the sourcerer can even manipulate fire."')
     choice_txt = ('"Here take an item to help you on your quest."')
     options = ['candle', 'waterskin', 'food']
@@ -435,7 +435,7 @@ def create_item3():
     """
     Create the item3 Branches object
     """
-    int_txt = ('The force field disappears and you step through.\n'
+    int_txt = ('\n\nThe force field disappears and you step through.\n'
                'You see some items on the floor.')
     choice_txt = ('You decide to take one with you.')
     options = ['knife', 'axe', 'fan']

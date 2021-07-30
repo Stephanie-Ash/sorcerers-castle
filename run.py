@@ -176,12 +176,12 @@ def puzzle_one():
             break
 
     if answer.upper() == 'ASTRONOMER':
-        printing('You rearrange the letters and the door swings open.\n')
+        printing('\n\nYou rearrange the letters and the door swings open.\n')
         describe_location(classes.create_hall())
     else:
-        printing('You rearrange the letters.\n'
+        printing('\n\nYou rearrange the letters.\n'
                  'Suddenly you hear a rush of water.\n'
-                 'A raging torrent comes and washes you away.')
+                 'A raging torrent comes and washes you away.\n\n')
         game_over()
 
 
@@ -209,11 +209,11 @@ def puzzle_two():
             break
 
     if answer.upper() == 'INDUSTRY':
-        printing('\nA door appears in the opposite wall.\n'
+        printing('\n\nA door appears in the opposite wall.\n'
                  'You open it and step through.\n')
         describe_location(classes.create_a1())
     else:
-        printing('\nWRONG appears on the wall.\n'
+        printing('\n\nWRONG appears on the wall.\n'
                  'You are suddenly lifted upwards.\n'
                  'You continue to rise but feel like you are falling.\n')
         describe_location(classes.create_dungeon())
@@ -239,11 +239,11 @@ def puzzle_three():
             break
 
     if int(answer) == 24:
-        printing('The trapdoor makes a clunking sound.\n'
+        printing('\n\nThe trapdoor makes a clunking sound.\n'
                  'It opens to reveal a flight of stairs which you descend.\n')
         describe_location(classes.create_b1())
     else:
-        printing('The trapdoor makes a clunking noise.\n'
+        printing('\n\nThe trapdoor makes a clunking noise.\n'
                  'Suddenly the whole floor of the room disappears.\n'
                  'You fall for what seems like ages.\n')
         describe_location(classes.create_dungeon())
@@ -273,8 +273,8 @@ def puzzle_four():
     if int(answer) == 8:
         describe_location(classes.create_item3())
     else:
-        printing('"\nMuahahaha" Evil laughter fills the air.\n'
-                 'The electrified force field rushes straight into you\n\n')
+        printing('\n\n"Muahahaha" Evil laughter fills the air.\n'
+                 'The electrified force field rushes straight into you.\n\n')
         game_over()
 
 
@@ -295,7 +295,7 @@ def end_room():
     PLAYER dictionary.
     """
     printing('You open the door at the top to be met with a stone wall.\n'
-             'The wall stretches all the way to the ceiling.\n')
+             'The wall stretches all the way to the ceiling.\n\n')
 
     if 'sledgehammer' not in PLAYER['inventory']:
         printing('You look in your bag but have nothing you can use to\n'
@@ -306,7 +306,7 @@ def end_room():
         printing('You take the sledgehammer from your bag and\n'
                  'smash a hole through the wall.\n\n')
         printing('You walk through the hole and are faced with a wall\n'
-                 'of twisting, interlocking vines.\n')
+                 'of twisting, interlocking vines.\n\n')
         if 'axe' not in PLAYER['inventory']:
             printing('You look in your bag but have nothing that will\n'
                      'chop down the vines.\n'
@@ -316,7 +316,7 @@ def end_room():
             printing('You take the axe from your bag and cut a path '
                      'through the vines.\n\n')
             printing('Once through the vines you are met with a wall '
-                     'of fire.\n')
+                     'of fire.\n\n')
             if 'waterskin' not in PLAYER['inventory']:
                 printing('You look in your bag but have nothing to put '
                          'out fire.\n'
@@ -324,7 +324,7 @@ def end_room():
                 game_over()
             else:
                 printing('You take the waterskin out of your bag and douse '
-                         'the fire.\n'
+                         'the fire.\n\n'
                          'You move forward and collect the antidote.\n\n'
                          f'Congratulations {PLAYER["name"]}! '
                          'You have saved the forest.\n')
