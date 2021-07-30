@@ -436,7 +436,7 @@ def create_item3():
     """
     Create the item3 Branches object
     """
-    int_txt = ('\n\nThe force field disappears and you step through.\n'
+    int_txt = ('\n\nThe forcefield disappears and you step through.\n'
                'You see some items on the floor.')
     choice_txt = ('You decide to take one with you.')
     options = ['knife', 'axe', 'fan']

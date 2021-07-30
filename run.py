@@ -14,7 +14,7 @@ def printing(text):
     """
     for char in text:
         sys.stdout.write(char)
-        time.sleep(0.02)
+        time.sleep(0.015)
 
 
 def start_game():
@@ -223,7 +223,7 @@ def puzzle_three():
     Ask the player a number puzzle and validate their answer.
     Choose a route based on whether the answer is correct.
     """
-    printing('You walk into a low ceilinged room with many windows.\n'
+    printing('You walk into a low-ceilinged room with many windows.\n'
              'You look out of the windows and see that you are very high up.\n'
              'How did that happen?!\n'
              'There is a trapdoor on the floor with a sign in the centre.\n'
@@ -273,7 +273,7 @@ def puzzle_four():
         describe_location(classes.create_item3())
     else:
         printing('\n\n"Muahahaha" Evil laughter fills the air.\n'
-                 'The electrified force field rushes straight into you.\n\n')
+                 'The electrified forcefield rushes straight into you.\n\n')
         game_over()
 
 
@@ -334,11 +334,22 @@ def game_over():
     Print a game over message when the player chooses the
     wrong option.
     """
-    printing("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n")
-    printing("X               Game Over               X\n")
-    printing("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n\n")
+    text = ("*******************************************************\n"
+            "*   _____                         ____                  *\n"
+            "*  / ____|                       / __ \                 *\n"
+            "* | |  __  __ _ _ __ ___   ___  | |  | |_   _____ _ __  *\n"
+            "* | | |_ |/ _` | '_ ` _ \ / _ \ | |  | \ \ / / _ \ '__| *\n"
+            "* | |__| | (_| | | | | | |  __/ | |__| |\ V /  __/ |    *\n"
+            "*  \_____|\__,_|_| |_| |_|\___|  \____/  \_/ \___|_|    *\n"
+            "*                                                       *\n"
+            "*********************************************************\n\n")
+
+    for char in text:
+        sys.stdout.write(char)
+        time.sleep(0.009)
 
     print("To play again click 'Play Game'.")
 
 
-start_game()
+# start_game()
+game_over()
