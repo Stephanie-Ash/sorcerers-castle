@@ -1,6 +1,7 @@
 # Classes containing text and player options
 # for most of the story.
 
+
 class Branches:
     """
     Creates an instance of Branches.
