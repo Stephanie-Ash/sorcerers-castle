@@ -95,6 +95,8 @@ def make_selection(branch):
         exit = branch.exits[0]
         printing(f'\n\nYou take the {choice.lower()} '
                  'and place it in your bag.\n')
+        printing('Your bag now contains the following: ')
+        print(*PLAYER['inventory'], sep=", ")
         printing(f'{branch.exit_txt[0]}\n\n')
     else:
         for i, j, k in zip(branch.options, branch.exits, branch.exit_txt):
