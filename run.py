@@ -168,7 +168,7 @@ def puzzle_one():
         answer = input('Rearrange the letters to form a single word:\n')
         if answer == '':
             print('No answer provided, please enter an answer.\n')
-        elif not all(char in answer.upper() for char in anagram):
+        elif not all(char in anagram for char in answer.upper()):
             print('\nYou must use the letters provided.\n')
         elif len(answer) != 10:
             print('\nYour answer must be 10 letters in length.\n')
