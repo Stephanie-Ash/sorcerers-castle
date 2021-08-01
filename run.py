@@ -22,9 +22,25 @@ def start_game():
     Start the game. Print the game title
     and introductory text.
     """
-    printing("*****************************************\n")
-    printing("*         The Sorcerer's Castle         *\n")
-    printing("*****************************************\n\n")
+    text = ("********************************************************\n"
+            "*                The Sourcerer's Castle                *\n"
+            "*            _   _   _            _   _   _            *\n"
+            "*           | |_| |_| |          | |_| |_| |           *\n"
+            "*           |         |__________|         |           *\n"
+            "*           |                              |           *\n"
+            "*           |           ________           |           *\n"
+            "*           |          |        |          |           *\n"
+            "*           |          |        |          |           *\n"
+            "*           |          |        |          |           *\n"
+            "*           |          |________|          |           *\n"
+            "*           |______________________________|           *\n"
+            "*                                                      *\n"
+            "* Type responses using the keyboard then press return  *\n"
+            "********************************************************\n\n")
+
+    for char in text:
+        sys.stdout.write(char)
+        time.sleep(0.009)
 
     printing('"Zzzz"\n'
              'You are sleeping peacefully under a tree when you are\n'
@@ -334,7 +350,7 @@ def game_over():
     Print a game over message when the player chooses the
     wrong option.
     """
-    text = ("*******************************************************\n"
+    text = ("*********************************************************\n"
             "*   _____                         ____                  *\n"
             "*  / ____|                       / __ \                 *\n"
             "* | |  __  __ _ _ __ ___   ___  | |  | |_   _____ _ __  *\n"
@@ -351,5 +367,4 @@ def game_over():
     print("To play again click 'Play Game'.")
 
 
-# start_game()
-game_over()
+start_game()
