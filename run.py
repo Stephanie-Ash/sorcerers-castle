@@ -15,7 +15,7 @@ def printing(text):
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.015)
+        time.sleep(0.018)
 
 
 def start_game():
@@ -344,7 +344,7 @@ def end_room():
                          'the fire.\n\n'
                          'You move forward and collect the antidote.\n\n'
                          f'Congratulations {PLAYER["name"]}! '
-                         'You have saved the forest.\n')
+                         'You have saved the forest.\n\n')
                 win_game()
 
 
