@@ -14,6 +14,7 @@ def printing(text):
     """
     for char in text:
         sys.stdout.write(char)
+        sys.stdout.flush()
         time.sleep(0.015)
 
 
@@ -40,6 +41,7 @@ def start_game():
 
     for char in text:
         sys.stdout.write(char)
+        sys.stdout.flush()
         time.sleep(0.009)
 
     printing('"Zzzz"\n'
@@ -343,6 +345,31 @@ def end_room():
                          'You move forward and collect the antidote.\n\n'
                          f'Congratulations {PLAYER["name"]}! '
                          'You have saved the forest.\n')
+                win_game()
+
+
+def win_game():
+    """
+    Print a message when the player wins
+    """
+    text = ("*********************************************************\n"
+            "*                      ,@@@@@@@,                        *\n"
+            "*              ,,,.   ,@@@@@@/@@,  .oo8888o.            *\n"
+            "*           ,&%%&%&&%,@@@@@/@@@@@@,8888\88/8o           *\n"
+            "*          ,%&\%&&%&&%,@@@\@@@/@@@88\88888/88'          *\n"
+            "*          %&&%&%&/%&&%@@\@@/ /@@@88888\88888'          *\n"
+            "*          %&&%/ %&%%&&@@\ V /@@' `88\8 `/88'           *\n"
+            "*          `&%\ ` /%&'    | |        \ '|8'             *\n"
+            "*              | |        | |         | |               *\n"
+            "*              | |        | |         | |               *\n"
+            "*       jgs \\/  _\//_/__/   \_//__\\/.  \_//__/_         *\n"
+            "*                                                       *\n"
+            "*********************************************************\n")
+
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.009)
 
 
 def game_over():
@@ -362,6 +389,7 @@ def game_over():
 
     for char in text:
         sys.stdout.write(char)
+        sys.stdout.flush()
         time.sleep(0.009)
 
     print("To play again click 'Play Game'.")
