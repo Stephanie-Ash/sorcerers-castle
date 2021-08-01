@@ -340,7 +340,7 @@ def create_c2():
     exit_txt = []
     exit_txt.append('\nYou let the water take you and float down the tunnel.\n'
                     'At the end there is a grate blocking your path.\n'
-                    'There is no way through, the water keeps rising.\n')
+                    'There is no way through, the water keeps rising.')
     exit_txt.append('\nThe turn back the way you came, fighting the water.\n'
                     'You arrive back at the entrance of the tunnel.\n'
                     'You turn and look again at the three tunnels')
