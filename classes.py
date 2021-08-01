@@ -227,7 +227,7 @@ def create_b2():
     exit_txt.append('\nYou turn and run away as fast as you can.\n'
                     'At first you hear them chasing but soon lose them.\n'
                     'You stop to catch your breath and find yourself '
-                    'on top of the same dune as before.\n\n'
+                    'on top of the same dune\nas before.\n\n'
                     'Do you:\n'
                     'a. Head towards the village\n'
                     'b. Head towards the oasis\n'

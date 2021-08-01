@@ -42,7 +42,7 @@ def start_game():
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.009)
+        time.sleep(0.005)
 
     printing('"Zzzz"\n'
              'You are sleeping peacefully under a tree when you are\n'
@@ -369,7 +369,7 @@ def win_game():
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.009)
+        time.sleep(0.005)
 
 
 def game_over():
@@ -390,7 +390,7 @@ def game_over():
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.009)
+        time.sleep(0.005)
 
     print("To play again click 'Play Game'.")
 
