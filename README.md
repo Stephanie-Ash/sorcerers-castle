@@ -1,45 +1,89 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The Sourcerer's Castle
 
-Welcome Stephanie-Ash,
+The Sourcerer's Castle is a text based story and puzzle game which runs in the Code Institute mock terminal on Heroku. Players are sent on a quest to the Sorcerer's Castle to find an antidote for the poisoned Tree of Life thus saving the Forest of High Elms.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+[The live project can be found here.](https://sorcerers-castle.herokuapp.com/)
 
-## Gitpod Reminders
+![Game Introduction](assets/screenshots/sourcerers-castle-intro.jpg)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## How to Play
 
-`python3 -m http.server`
+Text descriptions lead the player through the game. At various points they will be asked to provide their input. This input will either be a solution to a word or number puzzle or a choice of options (such as left or right). The input the user provides will determine the next destination of the game. Some options or incorrect answers will lead to game over. At certain points of the game the player will also be asked to choose an item to add to their inventory.
 
-A blue button should appear to click: *Make Public*,
+The player wins when they correctly navigate through the story to the final 'antidote' room and also have the correct items in their inventory.
 
-Another blue button should appear to click: *Open Browser*.
+A flow chart of the different game routes can be viewed [here.](assets/screenshots/sourcerers-castle-flow-chart.pdf)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Features
 
-A blue button should appear to click: *Make Public*,
+* ### Graphics
+    * Simple graphics for the introductory message, game over message and win game message break up the text and make the came more visually interesting.
 
-Another blue button should appear to click: *Open Browser*.
+![Game Graphics](assets/screenshots/sourcerers-castle-graphics.jpg)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* ### Puzzles
+   * Asking the player to solve puzzles at certain points in the game makes it a bit more interesting and challenging than a standard text based story game.
 
-## Updates Since The Instructional Video
+![Example Puzzle](assets/screenshots/sourcerers-castle-puzzle3.jpg)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* ### Input Validation and Error Checking
+    * Checks are in place for the story options to ensure the player only inputs one of the available choices.
+    * Messages are displayed to inform the player of an incorrect input.
+    * The player puzzle responses are also checked you ensure that they have given the right type of input without giving away the puzzle answer.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![Story Input Validation](assets/screenshots/sourcerers-castle-story-validation.jpg)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![Story Input Validation](assets/screenshots/sourcerers-castle-puzzle-validation.jpg)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Data Model
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+To keep the functions that control the flow of the game simple and reusable, the information from the various branches of the story, including text, options and exit routes have been stored in Branches class instances.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+PuzzleStrings and EndRoomStrings classes have also been created to store most of the string text used in the puzzles and end rooms.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Testing
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* Continuous testing was carried out throughout the development process with errors corrected as they appear.
+* The Gitpod in built problem reporting was used to assist with the continuous testing.
+* The way the return routes of the story were originally set up caused recursion errors so the route option was changed to a string rather than function call and extra elif statements were added to the choose_destination function.
+* The exit type key for a number of Branches instances was also not formated as a string causing the program to fail.
 
---------
+### Unfixed Bugs
+* The printing function is supposed to print the text one character at a time giving the impression of a story being typed. It works well in Gitpod, but the sys.stdout.flush does not appear to work when running using the terminal template on Heroku.
+* The time.sleep does still work though and determines the speed that each line prints allowing for more dynamic storytelling.
 
-Happy coding!
+### Validator Testing
+* No errors are reported when passing through the [PEP8 online check](http://pep8online.com/)
+
+## Deployment
+
+### Heroku
+
+The project was deployed using the Code Institutes mock terminal for Heroku. The following steps can be used to deploy the site:
+* Navigate to GitHub locate and fork or clone the GitHub repository.
+* Navigate to and login to Heroku.
+* From the dashboard select 'New' and 'Create new app'.
+* Give the app a name and click 'Create app'.
+* Navigate to the settings tab and select 'Add buildpack'.
+* Search for and select 'Python' and 'NodeJS in that order.
+* Navigate to the 'Deploy' tab and choose GitHub as the deployment method.
+* Search for and select the correct GitHub repository.
+* Select either automatic of manual deployment.
+
+### Forking the GitHub Repository
+
+The following steps can be used to fork the GitHub repository:
+* On GitHub navigate to the main page of the repository.
+* The 'Fork' button can be found on the top righthand side of the screen.
+* Click the button to create a copy of the original repository.
+
+### Cloning the GitHub Repository
+
+The following steps can be used to clone the GitHub repository:
+* On GitHub navigate to the main page of the repository.
+* Above the list of files select 'Code'.
+* Three options are provided, HTTPS, SSH and GitHub CLI. Select the appropriate option and click the 'Copy' button next to the URL.
+* Open Git Bash.
+* Change the working directory to the location for the cloned directory.
+* Type git clone and paste the copied URL.
+* Press 'Enter' to create the clone.
