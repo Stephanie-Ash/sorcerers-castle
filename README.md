@@ -37,23 +37,23 @@ A flow chart of the different game routes can be viewed [here.](assets/screensho
 
 ## Data Model
 
-To keep the functions that control the flow of the game simple and reusable, the information from the various branches of the story, including text, options and exit routes have been stored in Branches class instances.
+To keep the functions that control the flow of the game simple and reusable, the information from the various branches of the story, including text, options and exit routes has been stored in Branches class instances.
 
-PuzzleStrings and EndRoomStrings classes have also been created to store most of the string text used in the puzzles and end rooms.
+PuzzleStrings and EndRoomStrings classes have also been created to store most of the string text used in the puzzles and end room.
 
 ## Testing
 
-* Continuous testing was carried out throughout the development process with errors corrected as they appear.
-* The Gitpod in built problem reporting was used to assist with the continuous testing.
+* Continuous testing was carried out throughout the development process with errors corrected as they appeared.
+* The Gitpod in built problem reporting also helped to identify problems when they arose.
 * The way the return routes of the story were originally set up caused recursion errors so the route option was changed to a string rather than function call and extra elif statements were added to the choose_destination function.
-* The exit type key for a number of Branches instances was also not formated as a string causing the program to fail.
+* The exit type key for a number of Branches instances was also erroneously not formated as a string causing the program to fail. All the instances of this problem were corrected.
 
 ### Unfixed Bugs
 * The printing function is supposed to print the text one character at a time giving the impression of a story being typed. It works well in Gitpod, but the sys.stdout.flush does not appear to work when running using the terminal template on Heroku.
 * The time.sleep does still work though and determines the speed that each line prints allowing for more dynamic storytelling.
 
 ### Validator Testing
-* No errors are reported when passing through the [PEP8 online check](http://pep8online.com/)
+* No errors are reported when passing through the [PEP8 online check.](http://pep8online.com/)
 
 ## Deployment
 
@@ -65,7 +65,7 @@ The project was deployed using the Code Institutes mock terminal for Heroku. The
 * From the dashboard select 'New' and 'Create new app'.
 * Give the app a name and click 'Create app'.
 * Navigate to the settings tab and select 'Add buildpack'.
-* Search for and select 'Python' and 'NodeJS in that order.
+* Search for and select the 'Python' and 'NodeJS buildpacks in that order.
 * Navigate to the 'Deploy' tab and choose GitHub as the deployment method.
 * Search for and select the correct GitHub repository.
 * Select either automatic of manual deployment.
@@ -87,3 +87,9 @@ The following steps can be used to clone the GitHub repository:
 * Change the working directory to the location for the cloned directory.
 * Type git clone and paste the copied URL.
 * Press 'Enter' to create the clone.
+
+## Credits
+
+* Code Institute provided the template for the deployment terminal.
+* The code for seting the speed of the print messages was taken from [Stack Overflow.](https://stackoverflow.com/questions/4627033/printing-a-string-with-a-little-delay-between-the-chars) The idea to create a separate function for this came from Ruairidh MacArthur's [Escape the Cave.](https://github.com/roomacarthur/escape-the-cave)
+* Help for the ascii graphic messages was found [here](https://patorjk.com/software/taag/#p=display&f=Big&t=Game%20Over) and [here.](https://ascii.co.uk/)
