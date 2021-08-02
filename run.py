@@ -82,7 +82,7 @@ def describe_location(branch):
     Provide an initial description of the area and
     give a description of the choices the player will have to make,
     before calling the selection functions.
-    Will run for all standard story Branches.
+    Will run for all standard story or item Branches.
     """
     printing(f'{branch.int_txt}\n\n')
     printing(f'{branch.choice_txt}\n\n')
@@ -127,7 +127,7 @@ def make_selection(branch):
 
 def validate_choice(selection, branch):
     """
-    Check the user input from the make_selection functions.
+    Check the user input from the make_selection function.
     Print error messages if not valid.
     """
     user_choice = selection.lower()
@@ -276,7 +276,7 @@ def validate_answer(answer):
 def end_room():
     """
     Final destination. Decide whether the player wins or loses
-    based on the correct items are in the inventory of the
+    based on if the correct items are in the inventory of the
     PLAYER dictionary.
     """
     printing(classes.EndRoomStrings.end_room1)

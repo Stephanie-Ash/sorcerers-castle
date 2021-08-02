@@ -20,7 +20,7 @@ class Branches:
 
 def create_intro():
     """
-    Create the intro Branches object. Visited at the beginning.
+    Create the intro Branches instance. Visited at the beginning.
     """
     int_txt = ('The Evil Sourcerer has poisoned the Tree of Life '
                'and the forest is dying.\n'
@@ -40,7 +40,8 @@ def create_intro():
 
 def create_intro_no():
     """
-    Create the intro_no Branches object.
+    Create the intro_no Branches instance.
+    Will run if player answers no to intro options.
     """
     int_txt = '"The tree of life will not last much longer."'
     choice_txt = '"Please change your mind, the forest is counting on you!"'
@@ -56,12 +57,12 @@ def create_intro_no():
     return intro_no
 
 
-# After player solves an initial puzzle they are the choice of two doors.
+# After player solves an puzzle1 they are given the choice of two doors.
 # This choice will determine their route through the game.
-# Puzzle functions are in run.py file.
+# Puzzle functions are in run.py file with string classes below.
 def create_hall():
     """
-    Create the hall Branches object.
+    Create the hall Branches instance.
     """
     int_txt = 'You walk into a dark hallway.'
     choice_txt = 'There are two doors, one to the left and one to the right.'
@@ -80,7 +81,7 @@ def create_hall():
 # Dungeon route, followed if Puzzles 2 or 3 are failed.
 def create_dungeon():
     """
-    Create the dungeon Branches object.
+    Create the dungeon Branches instance.
     """
     int_txt = ('You land with a bump in a cold dark dungeon.\n'
                'You see that there is a door set high in the wall '
@@ -107,7 +108,7 @@ def create_dungeon():
 # A route, followed if Puzzle2 is passed.
 def create_a1():
     """
-    Create the a1 Branches object.
+    Create the a1 Branches instance.
     """
     int_txt = ('You find yourself in a...jungle!\n'
                'The trees are tightly packed together and wild looking,\n'
@@ -132,7 +133,7 @@ def create_a1():
 
 def create_a2():
     """
-    Create the a2 Branches object
+    Create the a2 Branches instance.
     """
     int_txt = ('You are making great progress until you suddenly swing '
                'into a clearing.\nYou drop to the floor.\n'
@@ -159,7 +160,7 @@ def create_a2():
 
 def create_a3():
     """
-    Create the a3 Branches object
+    Create the a3 Branches instance.
     """
     int_txt = ('Your journey gets rougher as you travel through rapids.\n'
                'You see a steep drop, almost waterfall ahead.\n'
@@ -186,7 +187,7 @@ def create_a3():
 # B route, followed if Puzzle3 is passed.
 def create_b1():
     """
-    Create the b1 Branches object
+    Create the b1 Branches instance.
     """
     int_txt = ('You emerge into...a desert!\n'
                'Sandy dunes stretch for miles in every direction.\n'
@@ -213,7 +214,7 @@ def create_b1():
 
 def create_b2():
     """
-    Create the b2 Branches object
+    Create the b2 Branches instance.
     """
     int_txt = ('You walk into the village and wander past the huts.\n'
                'You open the door to one and notice a group '
@@ -246,7 +247,7 @@ def create_b2():
 
 def create_b3():
     """
-    Create the b3 Branches object
+    Create the b3 Branches instance.
     """
     int_txt = ('You stroll into the oasis, it is so much cooler here.\n'
                'There is a large pool in the middle.\n'
@@ -274,7 +275,7 @@ def create_b3():
 
 def create_b4():
     """
-    Create the b4 Branches object
+    Create the b4 Branches instance.
     """
     int_txt = ('You keep walking, you are getting hotter and hotter.\n'
                'You will not make it much further.\n'
@@ -305,7 +306,7 @@ def create_b4():
 # C route, followed if player escapes the dungeon.
 def create_c1():
     """
-    Create the c1 Branches object
+    Create the c1 Branches instance.
     """
     int_txt = ('You walk into a dark, stinky sewer, yuk!\n'
                'You continue forward until you see three tunnels ahead.')
@@ -330,7 +331,7 @@ def create_c1():
 
 def create_c2():
     """
-    Create the c2 Branches object
+    Create the c2 Branches instance.
     """
     int_txt = ('More water and sewage comes into the tunnel from the sides.\n'
                'It has reached your waist and is still rising.')
@@ -355,7 +356,7 @@ def create_c2():
 
 def create_c3():
     """
-    Create the c3 Branches object
+    Create the c3 Branches instance.
     """
     int_txt = ('The sound of rats gets louder the further you go.\n'
                'You feel them running past your feet.\n'
@@ -378,7 +379,7 @@ def create_c3():
 
 def create_sprite():
     """
-    Create the sprite Branches object.
+    Create the sprite Branches instance.
     Reached if the player makes it through the A, B or C routes
     """
     int_txt = ('Before you can reach the door a sprite appears.\n'
@@ -400,10 +401,12 @@ def create_sprite():
     return sprite
 
 
-# Item pick up Branches
+# Item pick up Branches.
+# Allow the player to add items to their inventory.
+# Items will be required in the end room.
 def create_item1():
     """
-    Create the item1 Branches object
+    Create the item1 Branches instance.
     """
     int_txt = ('"Be careful on your quest, the castle is full of traps.\n'
                'I hear that the sourcerer can even manipulate fire."')
@@ -420,7 +423,7 @@ def create_item1():
 
 def create_item2():
     """
-    Create the item2 Branches object
+    Create the item2 Branches instance.
     """
     int_txt = ('"Thank you, I can now escape the castle.\n'
                'Your journey from here is treacherous.\n'
@@ -438,7 +441,7 @@ def create_item2():
 
 def create_item3():
     """
-    Create the item3 Branches object
+    Create the item3 Branches instance.
     """
     int_txt = ('\n\nThe forcefield disappears and you step through.\n'
                'You see some items on the floor.')
@@ -454,6 +457,9 @@ def create_item3():
 
 
 class PuzzleStrings:
+    """
+    Class to store strings for the puzzles.
+    """
     puzz_one1 = ('You arrive at the castle.\n'
                  'It has massive stone walls but no windows.\n'
                  'There is a large wooden door in the centre of the wall.\n'
@@ -511,6 +517,9 @@ class PuzzleStrings:
 
 
 class EndRoomStrings:
+    """
+    Class to store strings for the final room in the game.
+    """
     end_room1 = ('You open the door at the top to be met with a stone wall.\n'
                  'The wall stretches all the way to the ceiling.\n\n')
 
