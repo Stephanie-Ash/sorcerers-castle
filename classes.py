@@ -20,7 +20,7 @@ class Branches:
 
 def create_intro():
     """
-    Create the intro Branches object
+    Create the intro Branches object. Visited at the beginning.
     """
     int_txt = ('The Evil Sourcerer has poisoned the Tree of Life '
                'and the forest is dying.\n'
@@ -40,7 +40,7 @@ def create_intro():
 
 def create_intro_no():
     """
-    Create the intro_no Branches object
+    Create the intro_no Branches object.
     """
     int_txt = '"The tree of life will not last much longer."'
     choice_txt = '"Please change your mind, the forest is counting on you!"'
@@ -56,9 +56,12 @@ def create_intro_no():
     return intro_no
 
 
+# After player solves an initial puzzle they are the choice of two doors.
+# This choice will determine their route through the game.
+# Puzzle functions are in run.py file.
 def create_hall():
     """
-    Create the hall Branches object
+    Create the hall Branches object.
     """
     int_txt = 'You walk into a dark hallway.'
     choice_txt = 'There are two doors, one to the left and one to the right.'
@@ -74,9 +77,10 @@ def create_hall():
     return hall
 
 
+# Dungeon route, followed if Puzzles 2 or 3 are failed.
 def create_dungeon():
     """
-    Create the dungeon Branches object
+    Create the dungeon Branches object.
     """
     int_txt = ('You land with a bump in a cold dark dungeon.\n'
                'You see that there is a door set high in the wall '
@@ -447,3 +451,60 @@ def create_item3():
 
     item3 = Branches(int_txt, choice_txt, options, opt_txt, exits, exit_txt)
     return item3
+
+
+class PuzzleStrings:
+    puzz_one1 = ('You arrive at the castle.\n'
+                 'It has massive stone walls but no windows.\n'
+                 'There is a large wooden door in the centre of the wall.\n'
+                 'In the centre there are a series of letters.\n'
+                 'The letters can be moved.\n\n'
+                 'They Spell out: MOON STARER\n\n')
+
+    puzz_one2 = '\n\nYou rearrange the letters and the door swings open.\n'
+
+    puzz_one3 = ('\n\nYou rearrange the letters.\n'
+                 'Suddenly you hear a rush of water.\n'
+                 'A raging torrent comes and washes you away.\n\n')
+
+    puzz_two1 = ('You walk into a gloomy room lit by torches.\n'
+                 'The room is so tall you cannot see the ceiling.\n'
+                 'The door slams shut and disappears.\n'
+                 'There is a puzzle written on the wall.\n\n'
+                 'Fill in the spaces to create a word:\n'
+                 '_ _D U S T_ _\n\n')
+
+    puzz_two2 = ('\n\nA door appears in the opposite wall.\n'
+                 'You open it and step through.\n')
+
+    puzz_two3 = ('\n\nWRONG appears on the wall.\n'
+                 'You are suddenly lifted upwards.\n'
+                 'You continue to rise but feel like you are falling.\n')
+
+    puzz_three1 = ('You walk into a low-ceilinged room with many windows.\n'
+                   'You look out of the windows and see that you are very '
+                   'high up.\nHow did that happen?!\n'
+                   'There is a trapdoor on the floor with a sign in the '
+                   'centre.\nIt looks like a puzzle.\n\n'
+                   'The puzzle reads:\n'
+                   'if tree = 48 and branch = 46 what does leaf equal?\n\n')
+
+    puzz_three2 = ('\n\nThe trapdoor makes a clunking sound.\n'
+                   'It opens to reveal a flight of stairs which you '
+                   'descend.\n')
+
+    puzz_three3 = ('\n\nThe trapdoor makes a clunking noise.\n'
+                   'Suddenly the whole floor of the room disappears.\n'
+                   'You fall for what seems like ages.\n')
+
+    puzz_four1 = ('You find yourself back in the castle.\n'
+                  'There is a staircase ahead with a forcefield blocking it.\n'
+                  'In bright letters a message reads:\n'
+                  'This leads to the inner sanctum of the great sourcerer, \n'
+                  'lighter of fires, builder of walls, grower of vines.\n'
+                  'Only those who can solve this riddle may pass.\n\n'
+                  'What is the next number in the sequence:\n'
+                  '1, 1, 2, 3, 5...\n\n')
+
+    puzz_four2 = ('\n\n"Muahahaha" Evil laughter fills the air.\n'
+                  'The electrified forcefield rushes straight into you.\n\n')

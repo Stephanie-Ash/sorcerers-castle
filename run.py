@@ -172,12 +172,7 @@ def puzzle_one():
     If the player passes they will continue in the story.
     Otherwise it will be game over.
     """
-    printing('You arrive at the castle.\n'
-             'It has massive stone walls but no windows.\n'
-             'There is a large wooden door in the centre of the wall.\n'
-             'In the centre there are a series of letters.\n'
-             'The letters can be moved.\n\n'
-             'They Spell out: MOON STARER\n\n')
+    printing(classes.PuzzleStrings.puzz_one1)
 
     anagram = 'MOONSTARER'
 
@@ -193,12 +188,10 @@ def puzzle_one():
             break
 
     if answer.upper() == 'ASTRONOMER':
-        printing('\n\nYou rearrange the letters and the door swings open.\n')
+        printing(classes.PuzzleStrings.puzz_one2)
         describe_location(classes.create_hall())
     else:
-        printing('\n\nYou rearrange the letters.\n'
-                 'Suddenly you hear a rush of water.\n'
-                 'A raging torrent comes and washes you away.\n\n')
+        printing(classes.PuzzleStrings.puzz_one3)
         game_over()
 
 
@@ -207,12 +200,7 @@ def puzzle_two():
     Ask the player a word puzzle and validate their input.
     Choose route  based on whether the answer is correct.
     """
-    printing('You walk into a gloomy room lit by torches.\n'
-             'The room is so tall you cannot see the ceiling.\n'
-             'The door slams shut and disappears.\n'
-             'There is a puzzle written on the wall.\n\n'
-             'Fill in the spaces to create a word:\n'
-             '_ _D U S T_ _\n\n')
+    printing(classes.PuzzleStrings.puzz_two1)
 
     while True:
         answer = input('Enter your answer:\n')
@@ -226,13 +214,10 @@ def puzzle_two():
             break
 
     if answer.upper() == 'INDUSTRY':
-        printing('\n\nA door appears in the opposite wall.\n'
-                 'You open it and step through.\n')
+        printing(classes.PuzzleStrings.puzz_two2)
         describe_location(classes.create_a1())
     else:
-        printing('\n\nWRONG appears on the wall.\n'
-                 'You are suddenly lifted upwards.\n'
-                 'You continue to rise but feel like you are falling.\n')
+        printing(classes.PuzzleStrings.puzz_two3)
         describe_location(classes.create_dungeon())
 
 
@@ -241,13 +226,7 @@ def puzzle_three():
     Ask the player a number puzzle and validate their answer.
     Choose a route based on whether the answer is correct.
     """
-    printing('You walk into a low-ceilinged room with many windows.\n'
-             'You look out of the windows and see that you are very high up.\n'
-             'How did that happen?!\n'
-             'There is a trapdoor on the floor with a sign in the centre.\n'
-             'It looks like a puzzle.\n\n'
-             'The puzzle reads:\n'
-             'if tree = 48 and branch = 46 what does leaf equal?\n\n')
+    printing(classes.PuzzleStrings.puzz_three1)
 
     while True:
         answer = input('Enter your answer:\n')
@@ -256,13 +235,10 @@ def puzzle_three():
             break
 
     if int(answer) == 24:
-        printing('\n\nThe trapdoor makes a clunking sound.\n'
-                 'It opens to reveal a flight of stairs which you descend.\n')
+        printing(classes.PuzzleStrings.puzz_three2)
         describe_location(classes.create_b1())
     else:
-        printing('\n\nThe trapdoor makes a clunking noise.\n'
-                 'Suddenly the whole floor of the room disappears.\n'
-                 'You fall for what seems like ages.\n')
+        printing(classes.PuzzleStrings.puzz_three3)
         describe_location(classes.create_dungeon())
 
 
@@ -272,14 +248,7 @@ def puzzle_four():
     Validate their input.
     If correct continue to the final item select, else game over.
     """
-    printing('You find yourself back in the castle.\n'
-             'There is a staircase ahead with a forcefield blocking it.\n'
-             'In bright letters a message reads:\n'
-             'This leads to the inner sanctum of the great sourcerer, \n'
-             'lighter of fires, builder of walls, grower of vines.\n'
-             'Only those who can solve this riddle may pass.\n\n'
-             'What is the next number in the sequence:\n'
-             '1, 1, 2, 3, 5...\n\n')
+    printing(classes.PuzzleStrings.puzz_four1)
 
     while True:
         answer = input('Enter your answer:\n')
@@ -290,8 +259,7 @@ def puzzle_four():
     if int(answer) == 8:
         describe_location(classes.create_item3())
     else:
-        printing('\n\n"Muahahaha" Evil laughter fills the air.\n'
-                 'The electrified forcefield rushes straight into you.\n\n')
+        printing(classes.PuzzleStrings.puzz_four2)
         game_over()
 
 
