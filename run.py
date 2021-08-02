@@ -279,39 +279,26 @@ def end_room():
     based on the correct items are in the inventory of the
     PLAYER dictionary.
     """
-    printing('You open the door at the top to be met with a stone wall.\n'
-             'The wall stretches all the way to the ceiling.\n\n')
+    printing(classes.EndRoomStrings.end_room1)
 
     if 'sledgehammer' not in PLAYER['inventory']:
-        printing('You look in your bag but have nothing you can use to\n'
-                 'knock down a wall.\n'
-                 'You run into it as hard as you can.\n\n')
+        printing(classes.EndRoomStrings.end_room2)
         game_over()
     else:
-        printing('You take the sledgehammer from your bag and\n'
-                 'smash a hole through the wall.\n\n')
-        printing('You walk through the hole and are faced with a wall\n'
-                 'of twisting, interlocking vines.\n\n')
+        printing(classes.EndRoomStrings.end_room3)
+        printing(classes.EndRoomStrings.end_room4)
         if 'axe' not in PLAYER['inventory']:
-            printing('You look in your bag but have nothing that will\n'
-                     'chop down the vines.\n'
-                     'You try to push your way through but get caught.\n\n')
+            printing(classes.EndRoomStrings.end_room5)
             game_over()
         else:
-            printing('You take the axe from your bag and cut a path '
-                     'through the vines.\n\n')
-            printing('Once through the vines you are met with a wall '
-                     'of fire.\n\n')
+            printing(classes.EndRoomStrings.end_room6)
+            printing(classes.EndRoomStrings.end_room7)
             if 'waterskin' not in PLAYER['inventory']:
-                printing('You look in your bag but have nothing to put '
-                         'out fire.\n'
-                         'You try to run through but catch alight.\n\n')
+                printing(classes.EndRoomStrings.end_room8)
                 game_over()
             else:
-                printing('You take the waterskin out of your bag and douse '
-                         'the fire.\n\n'
-                         'You move forward and collect the antidote.\n\n'
-                         f'Congratulations {PLAYER["name"]}! '
+                printing(classes.EndRoomStrings.end_room9)
+                printing(f'Congratulations {PLAYER["name"]}! '
                          'You have saved the forest.\n\n')
                 win_game()
 

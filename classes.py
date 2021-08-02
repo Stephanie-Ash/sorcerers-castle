@@ -508,3 +508,33 @@ class PuzzleStrings:
 
     puzz_four2 = ('\n\n"Muahahaha" Evil laughter fills the air.\n'
                   'The electrified forcefield rushes straight into you.\n\n')
+
+
+class EndRoomStrings:
+    end_room1 = ('You open the door at the top to be met with a stone wall.\n'
+                 'The wall stretches all the way to the ceiling.\n\n')
+
+    end_room2 = ('You look in your bag but have nothing you can use to\n'
+                 'knock down a wall.\n'
+                 'You run into it as hard as you can.\n\n')
+
+    end_room3 = ('You take the sledgehammer from your bag and\n'
+                 'smash a hole through the wall.\n\n')
+
+    end_room4 = ('You walk through the hole and are faced with a wall\n'
+                 'of twisting, interlocking vines.\n\n')
+
+    end_room5 = ('You look in your bag but have nothing that will\n'
+                 'chop down the vines.\n'
+                 'You try to push your way through but get caught.\n\n')
+
+    end_room6 = ('You take the axe from your bag and cut a path '
+                 'through the vines.\n\n')
+
+    end_room7 = ('Once through the vines you are met with a wall of fire.\n\n')
+
+    end_room8 = ('You look in your bag but have nothing to put out fire.\n'
+                 'You try to run through but catch alight.\n\n')
+
+    end_room9 = ('You take the waterskin out of your bag and douse the '
+                 'fire.\n\nYou move forward and collect the antidote.\n\n')
