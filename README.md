@@ -51,7 +51,7 @@ PuzzleStrings and EndRoomStrings classes have also been created to store most of
 
 ### Unfixed Bugs
 * The printing function is supposed to print the text one character at a time giving the impression of a story being typed. It works well in Gitpod, but the sys.stdout.flush does not appear to work when running using the terminal template on Heroku.
-* The time.sleep does still work though and determines and slows the speed of the print messages improving the story flow.
+* The time.sleep does still work though and slows the speed of the print messages improving the story flow.
 
 ### Validator Testing
 * No errors are reported when passing through the [PEP8 online check.](http://pep8online.com/)
@@ -93,4 +93,5 @@ The following steps can be used to clone the GitHub repository:
 
 * Code Institute provided the template for the deployment terminal.
 * The code for seting the speed of the print messages was taken from [Stack Overflow.](https://stackoverflow.com/questions/4627033/printing-a-string-with-a-little-delay-between-the-chars) The idea to create a separate function for this came from Ruairidh MacArthur's [Escape the Cave.](https://github.com/roomacarthur/escape-the-cave)
+* The input validation functions were based on similar functions in the Code Institute Love Sandwiches walkthough.
 * Help for the ascii graphic messages was found at [ascii.co.uk](https://patorjk.com/software/taag/#p=display&f=Big&t=Game%20Over) and [patorjk.com.](https://ascii.co.uk/)
