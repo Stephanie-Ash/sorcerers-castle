@@ -17,7 +17,7 @@ A flow chart of the different game routes can be viewed [here.](assets/screensho
 ## Features
 
 * ### Graphics
-    * Simple graphics for the introductory message, game over message and win game message break up the text and make the came more visually interesting.
+    * Simple graphics for the introductory message, game over message and win game message break up the text and make the game more visually interesting.
 
 ![Game Graphics](assets/screenshots/sorcerers-castle-graphics.jpg)
 
