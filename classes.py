@@ -22,7 +22,7 @@ def create_intro():
     """
     Create the intro Branches instance. Visited at the beginning.
     """
-    int_txt = ('The Evil Sourcerer has poisoned the Tree of Life '
+    int_txt = ('The Evil Sorcerer has poisoned the Tree of Life '
                'and the forest is dying.\n'
                'He has locked the antidote in his castle."')
     choice_txt = '"Will you embark on a quest to retrieve it for us?"'
@@ -409,7 +409,7 @@ def create_item1():
     Create the item1 Branches instance.
     """
     int_txt = ('"Be careful on your quest, the castle is full of traps.\n'
-               'I hear that the sourcerer can even manipulate fire."')
+               'I hear that the sorcerer can even manipulate fire."')
     choice_txt = ('"Here take an item to help you on your quest."')
     options = ['candle', 'waterskin', 'food']
     opt_txt = 'Which item do you take?'
@@ -506,7 +506,7 @@ class PuzzleStrings:
     puzz_four1 = ('You find yourself back in the castle.\n'
                   'There is a staircase ahead with a forcefield blocking it.\n'
                   'In bright letters a message reads:\n'
-                  'This leads to the inner sanctum of the great sourcerer, \n'
+                  'This leads to the inner sanctum of the great sorcerer, \n'
                   'lighter of fires, builder of walls, grower of vines.\n'
                   'Only those who can solve this riddle may pass.\n\n'
                   'What is the next number in the sequence:\n'

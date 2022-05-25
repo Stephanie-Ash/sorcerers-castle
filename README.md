@@ -1,10 +1,10 @@
-# The Sourcerer's Castle
+# The Sorcerer's Castle
 
-The Sourcerer's Castle is a text based story and puzzle game which runs in the Code Institute mock terminal on Heroku. Players are sent on a quest to the Sorcerer's Castle to find an antidote for the poisoned Tree of Life thus saving the Forest of High Elms.
+The Sorcerer's Castle is a text based story and puzzle game which runs in the Code Institute mock terminal on Heroku. Players are sent on a quest to the Sorcerer's Castle to find an antidote for the poisoned Tree of Life thus saving the Forest of High Elms.
 
 [The live project can be found here.](https://sorcerers-castle.herokuapp.com/)
 
-![Game Introduction](assets/screenshots/sourcerers-castle-intro.jpg)
+![Game Introduction](assets/screenshots/sorcerers-castle-intro.jpg)
 
 ## How to Play
 
@@ -12,28 +12,28 @@ Text descriptions lead the player through the game. At various points they will 
 
 The player wins when they correctly navigate through the story to the final 'antidote' room and also have the correct items in their inventory.
 
-A flow chart of the different game routes can be viewed [here.](assets/screenshots/sourcerers-castle-flow-chart.pdf)
+A flow chart of the different game routes can be viewed [here.](assets/screenshots/sorcerers-castle-flow-chart.pdf)
 
 ## Features
 
 * ### Graphics
     * Simple graphics for the introductory message, game over message and win game message break up the text and make the came more visually interesting.
 
-![Game Graphics](assets/screenshots/sourcerers-castle-graphics.jpg)
+![Game Graphics](assets/screenshots/sorcerers-castle-graphics.jpg)
 
 * ### Puzzles
    * Asking the player to solve puzzles at certain points in the game makes it a bit more interesting and challenging than a standard text based story game.
 
-![Example Puzzle](assets/screenshots/sourcerers-castle-puzzle3.jpg)
+![Example Puzzle](assets/screenshots/sorcerers-castle-puzzle3.jpg)
 
 * ### Input Validation and Error Checking
     * Checks are in place for the story options to ensure the player only inputs one of the available choices.
     * Messages are displayed to inform the player of an incorrect input.
     * The player puzzle responses are also checked you ensure that they have given the right type of input without giving away the puzzle answer.
 
-![Story Input Validation](assets/screenshots/sourcerers-castle-story-validation.jpg)
+![Story Input Validation](assets/screenshots/sorcerers-castle-story-validation.jpg)
 
-![Story Input Validation](assets/screenshots/sourcerers-castle-puzzle-validation.jpg)
+![Story Input Validation](assets/screenshots/sorcerers-castle-puzzle-validation.jpg)
 
 ## Data Model
 

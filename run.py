@@ -24,7 +24,7 @@ def start_game():
     and introductory text.
     """
     text = ("********************************************************\n"
-            "*                The Sourcerer's Castle                *\n"
+            "*                The Sorcerer's Castle                *\n"
             "*            _   _   _            _   _   _            *\n"
             "*           | |_| |_| |          | |_| |_| |           *\n"
             "*           |         |__________|         |           *\n"
