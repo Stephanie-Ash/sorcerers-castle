@@ -2,7 +2,7 @@
 
 The Sorcerer's Castle is a text based story and puzzle game which runs in the Code Institute mock terminal on Heroku. Players are sent on a quest to the Sorcerer's Castle to find an antidote for the poisoned Tree of Life thus saving the Forest of High Elms.
 
-[The live project can be found here.](https://sorcerers-castle.herokuapp.com/)
+[The live project can be found here.](https://sorcerers-castle.onrender.com)
 
 ![Game Introduction](assets/screenshots/sorcerers-castle-intro.jpg)
 
